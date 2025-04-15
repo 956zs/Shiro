@@ -74,7 +74,7 @@ export const NoteTopicDetail: FC<{ topic: TopicModel }> = (props) => {
           <p className="flex items-center">
             <MdiClockOutline />
             <DividerVertical />
-            <span className="shrink-0">最近更新</span>
+            <span className="shrink-0">Last updated</span>
             <DividerVertical />
             <span className="inline-flex min-w-0 shrink">
               <Link
@@ -102,8 +102,8 @@ export const NoteTopicDetail: FC<{ topic: TopicModel }> = (props) => {
           <p className="flex items-center">
             <MdiFountainPenTip />
             <DividerVertical />
-            共有文章：
-            {data?.pagination?.total} 篇
+            Total articles:
+            {data?.pagination?.total}
           </p>
         </>
       )}

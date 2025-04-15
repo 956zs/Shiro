@@ -105,7 +105,7 @@ export const headerMenuConfig: IHeaderMenu[] = [
       {
         title: 'Transition',
         icon: h(RMixPlanet),
-        path: 'https://travel.moe/go.html',
+        path: 'https://info.n1cat.xyz',
       },
     ],
   },

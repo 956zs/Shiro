@@ -81,7 +81,7 @@ export const eventHandler = (
         Reflect.deleteProperty(nextPost, 'category')
         Object.assign(draft, nextPost)
       })
-      toast.info('文章已更新')
+      toast.info('Post updated')
       trackerRealtimeEvent()
 
       if (currentData.text !== post.text) {
@@ -102,7 +102,7 @@ export const eventHandler = (
         getGlobalCurrentPostData()?.id === post.id
       ) {
         router.replace(routeBuilder(Routes.PageDeletd, {}))
-        toast.error('文章已删除')
+        toast.error('Post deleted')
         trackerRealtimeEvent()
       }
 
@@ -121,7 +121,7 @@ export const eventHandler = (
       setCurrentNoteData((draft) => {
         Object.assign(draft.data, note)
       })
-      toast.info('手记已更新')
+      toast.info('Note updated')
       trackerRealtimeEvent()
 
       if (currentData.text !== note.text) {
@@ -141,7 +141,7 @@ export const eventHandler = (
         getCurrentNoteData()?.data.id === note.id
       ) {
         router.replace(routeBuilder(Routes.PageDeletd, {}))
-        toast.error('手记已删除')
+        toast.error('Note deleted')
         trackerRealtimeEvent()
       }
 
@@ -155,7 +155,7 @@ export const eventHandler = (
         setCurrentPageData((draft) => {
           Object.assign(draft, data)
         })
-        toast.info('页面已更新')
+        toast.info('Page updated')
         trackerRealtimeEvent()
       }
       break
@@ -164,7 +164,7 @@ export const eventHandler = (
     case EventTypes.NOTE_CREATE: {
       const { title, nid } = data as NoteModel
 
-      toast.success(`有新的内容发布了：「${title}」`, {
+      toast.success(`A new content has been released:「${title}」`, {
         onClick: () => {
           window.peek(`/notes/${nid}`)
         },
@@ -178,7 +178,7 @@ export const eventHandler = (
 
     case EventTypes.POST_CREATE: {
       const { title, category, slug } = data as PostModel
-      toast.success(`有新的内容发布了：「${title}」`, {
+      toast.success(`A new content has been released:「${title}」`, {
         onClick: () => {
           window.peek(`/posts/${category.slug}/${slug}`)
         },
@@ -202,13 +202,16 @@ export const eventHandler = (
         //   },
         // )
       } else {
-        toast.success(`写下一点小思考：\n${(data as RecentlyModel).content}`, {
-          autoClose: 10000,
-          iconElement: React.createElement(MdiLightbulbOn20),
-          onClick: () => {
-            router.push(routeBuilder(Routes.Thinking, {}))
+        toast.success(
+          `Write a little thought:\n${(data as RecentlyModel).content}`,
+          {
+            autoClose: 10000,
+            iconElement: React.createElement(MdiLightbulbOn20),
+            onClick: () => {
+              router.push(routeBuilder(Routes.Thinking, {}))
+            },
           },
-        })
+        )
       }
       break
     }
@@ -296,7 +299,7 @@ export const eventHandler = (
     }
 
     case 'fn#shiro#update': {
-      toast.info('网站已更新，请刷新页面', {
+      toast.info('The website has been updated, please refresh the page', {
         onClick: () => {
           location.reload()
         },

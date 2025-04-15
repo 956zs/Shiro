@@ -21,7 +21,7 @@ export const NoteTopicInfo = memo(() => {
     <>
       <Divider className="!w-3/4" />
       <p className="mb-1 flex min-w-0 flex-col overflow-hidden text-neutral-content/50">
-        此文章收录于专栏：
+        This article is included in the column:
       </p>
 
       <FloatPopover
@@ -65,7 +65,7 @@ const NoteTopicRank: FC<{
         <>
           <Divider />
           <p className="mb-1 flex min-w-0 flex-col overflow-hidden text-neutral-content/50">
-            此专栏的其他文章：
+            Other articles in this column:
           </p>
 
           <ul className="space-y-1 opacity-80">

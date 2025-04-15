@@ -78,8 +78,8 @@ export default function Page() {
   return (
     <div>
       <header className="prose prose-p:my-2">
-        <h1>Friends / 朋友們</h1>
-        <h3>Friends near and far / 海內存知己，天涯若比鄰</h3>
+        <h1>Friends</h1>
+        <h3>海內存知己，天涯若比鄰</h3>
       </header>
 
       <main className="mt-10 flex w-full flex-col">
@@ -282,25 +282,23 @@ const ApplyLinkInfo: FC = () => {
       <div className="prose mt-20">
         <Markdown>
           {[
-            `- Please ensure that your site has a link to mine before applying for approval. If the approval is passed, I will remove the link from my site, and add you to the blacklist. / 申請友鏈前請**務必確保**貴站有我站的友鏈，若審批通過後移除本站鏈接，本站也將移除友鏈，並加入黑名單。`,
-            `- If your site is inaccessible for a long time, I will remove your link, and you can apply again after recovery. / 若站點長時間無法訪問，我會刪除您的友鏈，恢復後可再次申請。`,
-            `- 申請友鏈前請**務必確保**貴站有我站的友鏈，若審批通過後移除本站鏈接，本站也將移除友鏈，並加入黑名單。`,
-            `- 若站點長時間無法訪問，我會刪除您的友鏈，恢復後可再次申請。`,
-            `- 確保您的網站不存在政治敏感問題及違法內容。沒有過多的廣告、無惡意軟件、腳本。且轉載文章須註明出處。 / Ensure your site does not contain politically sensitive issues or illegal content. No excessive ads, no malware, no scripts. And reprinted articles must indicate the source.`,
-            `- 確保站點全局啟用 HTTPS / Ensure your site globally enables HTTPS`,
-            `- 您需要有自己的獨立域名，暫且不同意公有子域名或免費域名的友鏈申請 (如 github.io, vercel.app, eu.org, js.cool, .tk, .ml, .cf 等) / You need to have your own independent domain, and for now, I don't agree to friend link applications from public subdomains or free domains (such as github.io, vercel.app, eu.org, js.cool, .tk, .ml, .cf, etc.)`,
-            `- 暫時不同意商業及非個人的網站的友鏈申請 / For now, I don't agree to friend link applications from commercial and non-personal websites`,
+            `- Please ensure that your site has a link to mine before applying for approval. If the approval is passed, I will remove the link from my site, and add you to the blacklist.`,
+            `- If your site is inaccessible for a long time, I will remove your link, and you can apply again after recovery.`,
+            `- Ensure your site does not contain politically sensitive issues or illegal content. No excessive ads, no malware, no scripts. And reprinted articles must indicate the source.`,
+            `- Ensure your site globally enables HTTPS`,
+            `- You need to have your own independent domain, and for now, I don't agree to friend link applications from public subdomains or free domains (such as github.io, vercel.app, eu.org, js.cool, .tk, .ml, .cf, etc.)`,
+            `- For now, I don't agree to friend link applications from commercial and non-personal websites`,
           ].join('\n\n')}
         </Markdown>
         <Markdown className="[&_p]:!my-1">
           {[
             '',
-            `**網站標題**: [${
+            `**Website title**: [${
               seo.title
             }](${`${location.protocol}//${location.host}`})`,
-            `**網站描述**: ${seo.description}`,
-            `**我的頭像**: [點擊下載](${avatar})`,
-            `**我的名字**: ${name}`,
+            `**Website description**: ${seo.description}`,
+            `**My avatar**: [Click to download](${avatar})`,
+            `**My name**: ${name}`,
           ].join('\n\n')}
         </Markdown>
       </div>
@@ -327,7 +325,7 @@ const FormModal = () => {
   const [inputs] = useState(() => [
     {
       name: 'author',
-      placeholder: 'Nickname * / 暱稱 *',
+      placeholder: 'Nickname *',
       rules: [
         {
           validator: (value: string) => !!value,
@@ -342,7 +340,7 @@ const FormModal = () => {
     },
     {
       name: 'name',
-      placeholder: 'Site Title * / 站點標題 *',
+      placeholder: 'Site Title *',
       rules: [
         {
           validator: (value: string) => !!value,
@@ -357,52 +355,47 @@ const FormModal = () => {
     },
     {
       name: 'url',
-      placeholder: 'Website * https:// / 網站 * https://',
+      placeholder: 'Website * https://',
       rules: [
         {
           validator: isHttpsUrl,
-          message:
-            'Please enter a valid website link https:// / 請輸入正確的網站鏈接 https://',
+          message: 'Please enter a valid website link https://',
         },
       ],
     },
     {
       name: 'avatar',
-      placeholder: 'Avatar Link * https:// / 頭像鏈接 * https://',
+      placeholder: 'Avatar Link * https://',
       rules: [
         {
           validator: isHttpsUrl,
-          message:
-            'Please enter a valid avatar link https:// / 請輸入正確的頭像鏈接 https://',
+          message: 'Please enter a valid avatar link https://',
         },
       ],
     },
     {
       name: 'email',
-      placeholder: 'Leave your email * / 留下你的郵箱哦 *',
+      placeholder: 'Leave your email *',
 
       rules: [
         {
           validator: isEmail,
-          message: 'Please enter a valid email / 請輸入正確的郵箱',
+          message: 'Please enter a valid email',
         },
       ],
     },
     {
       name: 'description',
-      placeholder:
-        'Describe yourself in one sentence * / 一句話描述一下自己吧 *',
+      placeholder: 'Describe yourself in one sentence *',
 
       rules: [
         {
           validator: (value: string) => !!value,
-          message:
-            'Please describe yourself in one sentence / 一句話描述一下自己吧',
+          message: 'Please describe yourself in one sentence',
         },
         {
           validator: (value: string) => value.length <= 50,
-          message:
-            'Description should not exceed 50 characters / 一句話描述不要超過50個字啦',
+          message: 'Description should not exceed 50 characters',
         },
       ],
     },
@@ -420,7 +413,7 @@ const FormModal = () => {
         .applyLink({ ...(currentValues as any) })
         .then(() => {
           dismissTop()
-          toast.success('Great! / 好耶！')
+          toast.success('Great!')
         })
         .catch((err) => {
           if (err instanceof RequestError)

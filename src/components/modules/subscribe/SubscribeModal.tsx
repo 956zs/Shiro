@@ -21,10 +21,10 @@ interface SubscribeModalProps {
 }
 
 const subscribeTextMap: Record<string, string> = {
-  post_c: '文章',
-  note_c: '手记',
-  say_c: '说说',
-  recently_c: '速记',
+  post_c: 'Post',
+  note_c: 'Note',
+  say_c: 'Say',
+  recently_c: 'Recently',
 }
 
 const initialState = {
