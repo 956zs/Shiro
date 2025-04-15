@@ -181,14 +181,14 @@ const ShareButton = () => {
 
         const hasShare = 'share' in navigator
 
-        const title = '分享一片宝藏文章'
+        const title = 'Share a treasure article'
         const url = urlBuilder(
           routeBuilder(Routes.Note, {
             id: note.nid.toString(),
           }),
         ).href
 
-        const text = `嘿，我发现了一片宝藏文章「${note.title}」哩，快来看看吧！`
+        const text = `Hey, I found a treasure article「${note.title}」, come and see!`
 
         if (hasShare)
           navigator.share({
@@ -198,7 +198,7 @@ const ShareButton = () => {
           })
         else {
           present({
-            title: '分享此内容',
+            title: 'Share this content',
             clickOutsideToDismiss: true,
             content: () => <ShareModal text={text} title={title} url={url} />,
           })

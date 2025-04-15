@@ -16,7 +16,6 @@ import {
   IcTwotoneSignpost,
   MdiFlask,
   MdiLightbulbOn20,
-  RMixPlanet,
 } from '~/components/icons/menu-collection'
 import { isSupportIcon, SocialIcon } from '~/components/modules/home/SocialIcon'
 import { usePresentSubscribeModal } from '~/components/modules/subscribe'
@@ -253,11 +252,6 @@ const windsock = [
     title: 'Record a Word',
     path: '/says',
     icon: FaSolidComments,
-  },
-  {
-    title: 'Transition',
-    icon: RMixPlanet,
-    path: 'https://travel.moe/go.html',
   },
 ]
 
