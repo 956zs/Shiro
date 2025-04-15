@@ -78,20 +78,20 @@ export default function Page() {
   return (
     <div>
       <header className="prose prose-p:my-2">
-        <h1>朋友们</h1>
-        <h3>海内存知己，天涯若比邻</h3>
+        <h1>Friends / 朋友們</h1>
+        <h3>Friends near and far / 海內存知己，天涯若比鄰</h3>
       </header>
 
       <main className="mt-10 flex w-full flex-col">
         {friends.length > 0 && (
           <>
-            {collections.length > 0 && renderTitle('我的朋友')}
+            {collections.length > 0 && renderTitle('My friends / 我的朋友')}
             <FriendSection data={friends} />
           </>
         )}
         {collections.length > 0 && (
           <>
-            {friends.length > 0 && renderTitle('我的收藏')}
+            {friends.length > 0 && renderTitle('My favorites / 我的收藏')}
             <FavoriteSection data={collections} />
           </>
         )}
@@ -100,7 +100,10 @@ export default function Page() {
           <>
             <Collapse
               title={
-                <div className="mt-8 font-bold">以下站点无法访问，已失联</div>
+                <div className="mt-8 font-bold">
+                  The following sites cannot be accessed, have been disconnected
+                  / 以下站點無法訪問，已失聯
+                </div>
               }
             >
               <OutdateSection data={outdated} />
@@ -111,7 +114,10 @@ export default function Page() {
           <>
             <Collapse
               title={
-                <div className="mt-8 font-bold">以下站点不合规，已被禁止</div>
+                <div className="mt-8 font-bold">
+                  The following sites are not compliant and have been banned /
+                  以下站點不合規，已被禁止
+                </div>
               }
             >
               <BannedSection data={banned} />
@@ -264,30 +270,37 @@ const ApplyLinkInfo: FC = () => {
   })
   const { present } = useModalStack()
   if (!canApply) {
-    return <NotSupport className="mt-20" text="主人禁止了申请友链。" />
+    return (
+      <NotSupport
+        className="mt-20"
+        text="The owner has banned the application for a friend link. / 站長禁止了申請友鏈。"
+      />
+    )
   }
   return (
     <>
       <div className="prose mt-20">
         <Markdown>
           {[
-            `- 申请友链前请**务必确保**贵站有我站的友链，若审批通过后移除本站链接，本站也将移除友链，并加入黑名单。`,
-            `- 若站点长时间无法访问，我会删除您的友链，恢复后可再次申请。`,
-            `- 确保您的网站不存在政治敏感问题及违法内容。没有过多的广告、无恶意软件、脚本。且转载文章须注明出处。`,
-            `- 确保站点全局启用 HTTPS`,
-            `- 您需要有自己的独立域名，暂且不同意公有子域名或免费域名的友链申请 (如 github.io, vercel.app, eu.org, js.cool, .tk, .ml, .cf 等)`,
-            `- 暂时不同意商业及非个人的网站的友链申请`,
+            `- Please ensure that your site has a link to mine before applying for approval. If the approval is passed, I will remove the link from my site, and add you to the blacklist. / 申請友鏈前請**務必確保**貴站有我站的友鏈，若審批通過後移除本站鏈接，本站也將移除友鏈，並加入黑名單。`,
+            `- If your site is inaccessible for a long time, I will remove your link, and you can apply again after recovery. / 若站點長時間無法訪問，我會刪除您的友鏈，恢復後可再次申請。`,
+            `- 申請友鏈前請**務必確保**貴站有我站的友鏈，若審批通過後移除本站鏈接，本站也將移除友鏈，並加入黑名單。`,
+            `- 若站點長時間無法訪問，我會刪除您的友鏈，恢復後可再次申請。`,
+            `- 確保您的網站不存在政治敏感問題及違法內容。沒有過多的廣告、無惡意軟件、腳本。且轉載文章須註明出處。 / Ensure your site does not contain politically sensitive issues or illegal content. No excessive ads, no malware, no scripts. And reprinted articles must indicate the source.`,
+            `- 確保站點全局啟用 HTTPS / Ensure your site globally enables HTTPS`,
+            `- 您需要有自己的獨立域名，暫且不同意公有子域名或免費域名的友鏈申請 (如 github.io, vercel.app, eu.org, js.cool, .tk, .ml, .cf 等) / You need to have your own independent domain, and for now, I don't agree to friend link applications from public subdomains or free domains (such as github.io, vercel.app, eu.org, js.cool, .tk, .ml, .cf, etc.)`,
+            `- 暫時不同意商業及非個人的網站的友鏈申請 / For now, I don't agree to friend link applications from commercial and non-personal websites`,
           ].join('\n\n')}
         </Markdown>
         <Markdown className="[&_p]:!my-1">
           {[
             '',
-            `**站点标题**: [${
+            `**網站標題**: [${
               seo.title
             }](${`${location.protocol}//${location.host}`})`,
-            `**站点描述**: ${seo.description}`,
-            `**主人头像**: [点击下载](${avatar})`,
-            `**主人名字**: ${name}`,
+            `**網站描述**: ${seo.description}`,
+            `**我的頭像**: [點擊下載](${avatar})`,
+            `**我的名字**: ${name}`,
           ].join('\n\n')}
         </Markdown>
       </div>
@@ -297,13 +310,13 @@ const ApplyLinkInfo: FC = () => {
         className="mt-5"
         onClick={() => {
           present({
-            title: '我想和你交朋友！',
+            title: 'I want to be friends with you! / 我想和你交朋友！',
 
             content: () => <FormModal />,
           })
         }}
       >
-        和我做朋友吧！
+        Be friends with me!
       </StyledButton>
     </>
   )
@@ -314,75 +327,82 @@ const FormModal = () => {
   const [inputs] = useState(() => [
     {
       name: 'author',
-      placeholder: '昵称 *',
+      placeholder: 'Nickname * / 暱稱 *',
       rules: [
         {
           validator: (value: string) => !!value,
-          message: '昵称不能为空',
+          message: 'Nickname cannot be empty / 暱稱不能為空',
         },
         {
           validator: (value: string) => value.length <= 20,
-          message: '昵称不能超过20个字符',
+          message:
+            'Nickname cannot exceed 20 characters / 暱稱不能超過20個字符',
         },
       ],
     },
     {
       name: 'name',
-      placeholder: '站点标题 *',
+      placeholder: 'Site Title * / 站點標題 *',
       rules: [
         {
           validator: (value: string) => !!value,
-          message: '站点标题不能为空',
+          message: 'Site title cannot be empty / 站點標題不能為空',
         },
         {
           validator: (value: string) => value.length <= 20,
-          message: '站点标题不能超过20个字符',
+          message:
+            'Site title cannot exceed 20 characters / 站點標題不能超過20個字符',
         },
       ],
     },
     {
       name: 'url',
-      placeholder: '网站 * https://',
+      placeholder: 'Website * https:// / 網站 * https://',
       rules: [
         {
           validator: isHttpsUrl,
-          message: '请输入正确的网站链接 https://',
+          message:
+            'Please enter a valid website link https:// / 請輸入正確的網站鏈接 https://',
         },
       ],
     },
     {
       name: 'avatar',
-      placeholder: '头像链接 * https://',
+      placeholder: 'Avatar Link * https:// / 頭像鏈接 * https://',
       rules: [
         {
           validator: isHttpsUrl,
-          message: '请输入正确的头像链接 https://',
+          message:
+            'Please enter a valid avatar link https:// / 請輸入正確的頭像鏈接 https://',
         },
       ],
     },
     {
       name: 'email',
-      placeholder: '留下你的邮箱哦 *',
+      placeholder: 'Leave your email * / 留下你的郵箱哦 *',
 
       rules: [
         {
           validator: isEmail,
-          message: '请输入正确的邮箱',
+          message: 'Please enter a valid email / 請輸入正確的郵箱',
         },
       ],
     },
     {
       name: 'description',
-      placeholder: '一句话描述一下自己吧 *',
+      placeholder:
+        'Describe yourself in one sentence * / 一句話描述一下自己吧 *',
 
       rules: [
         {
           validator: (value: string) => !!value,
-          message: '一句话描述一下自己吧',
+          message:
+            'Please describe yourself in one sentence / 一句話描述一下自己吧',
         },
         {
           validator: (value: string) => value.length <= 50,
-          message: '一句话描述不要超过50个字啦',
+          message:
+            'Description should not exceed 50 characters / 一句話描述不要超過50個字啦',
         },
       ],
     },
@@ -400,7 +420,7 @@ const FormModal = () => {
         .applyLink({ ...(currentValues as any) })
         .then(() => {
           dismissTop()
-          toast.success('好耶！')
+          toast.success('Great! / 好耶！')
         })
         .catch((err) => {
           if (err instanceof RequestError)
@@ -424,7 +444,7 @@ const FormModal = () => {
       ))}
 
       <StyledButton variant="primary" type="submit">
-        好耶！
+        Great!
       </StyledButton>
     </Form>
   )

@@ -163,7 +163,7 @@ export const GET = async (req: NextRequest) => {
         const { nid } = data
         document = await apiClient.note
           .getNoteById(+nid)
-          .then((r) => ({ title: r.data.title, subtitle: '手记' }))
+          .then((r) => ({ title: r.data.title, subtitle: 'Note' }))
         break
       }
       case 'page': {
