@@ -24,7 +24,7 @@ export const NoteHideIfSecret: Component = ({ children }) => {
     const MAX_TIMEOUT = (2 ^ 31) - 1
     if (isSecret && timeout && timeout < MAX_TIMEOUT) {
       timer = setTimeout(() => {
-        toast.info('刷新以查看解锁的文章', { autoClose: false })
+        toast.info('Refresh to view the unlocked article', { autoClose: false })
       }, timeout)
     }
 
@@ -51,8 +51,10 @@ export const NoteHideIfSecret: Component = ({ children }) => {
       return (
         <>
           <div className="my-6 text-center">
-            <p>这是一篇非公开的文章。(将在 {dateFormat} 解锁)</p>
-            <p>现在处于登录状态，预览模式：</p>
+            <p>
+              This is a non-public article.(Will be unlocked on {dateFormat})
+            </p>
+            <p>Currently logged in, preview mode:</p>
           </div>
           {children}
         </>
@@ -60,7 +62,8 @@ export const NoteHideIfSecret: Component = ({ children }) => {
     }
     return (
       <div className="my-6 text-center">
-        这篇文章暂时没有公开呢，将会在 {dateFormat} 解锁，再等等哦
+        This article is not public yet, it will be unlocked on {dateFormat},
+        please wait.
       </div>
     )
   }
