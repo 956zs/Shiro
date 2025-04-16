@@ -100,7 +100,7 @@ export const CommentBoxActionBar: Component = ({ className }) => {
         )}
       >
         <span className="hidden md:inline">
-          支持 <b>Markdown</b> 与{' '}
+          Support <b>Markdown</b> And{' '}
           <MLink href="https://docs.github.com/zh/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax">
             GFM
           </MLink>
