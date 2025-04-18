@@ -62,7 +62,7 @@ const UserLoginStat = () => {
           Last Login Time:{' '}
           {user.lastLoginTime ? (
             <time>
-              {parseDate(user.lastLoginTime, 'YYYY 年 M 月 D 日 dddd')}
+              {parseDate(user.lastLoginTime, 'YYYY year M month D day dddd')}
             </time>
           ) : (
             'N/A'
