@@ -20,7 +20,7 @@ export const CommentModal: ModalContentComponent<CommentModalProps> = (
   return (
     <div className="max-w-95vw overflow-y-auto overflow-x-hidden md:w-[500px] lg:w-[600px] xl:w-[700px]">
       <span>
-        回复： <h1 className="mt-4 text-lg font-medium">{title}</h1>
+        Reply to: <h1 className="mt-4 text-lg font-medium">{title}</h1>
       </span>
 
       <CommentBoxRoot

@@ -99,14 +99,14 @@ export const useReplyCommentMutation = () => {
       )
     },
     onSuccess: (_) => {
-      toast.success('回复成功')
+      toast.success('Reply successfully')
     },
     onError: () => {
       queryClient.invalidateQueries({
         queryKey: commentAdmin.byState(state).queryKey,
       })
 
-      toast.error('回复失败')
+      toast.error('Reply failed')
     },
   })
 }

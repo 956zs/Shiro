@@ -126,7 +126,7 @@ const PoweredBy: Component = ({ className }) => {
           </StyledLink>
         }
       >
-        这是{' '}
+        This is the open source version of{' '}
         <StyledLink
           className="underline"
           href="https://github.com/innei/Shiro"
@@ -134,10 +134,10 @@ const PoweredBy: Component = ({ className }) => {
         >
           Shiro
         </StyledLink>{' '}
-        的开源版本。
+        open source version.
         {process.env.COMMIT_HASH && process.env.COMMIT_URL && (
           <MLink popper={false} href={process.env.COMMIT_URL}>
-            版本哈希：{process.env.COMMIT_HASH.slice(0, 8)}
+            Version Hash: {process.env.COMMIT_HASH.slice(0, 8)}
           </MLink>
         )}
       </FloatPopover>

@@ -34,10 +34,7 @@ export const MFootNote: FC<PropsWithChildren> = (props) => {
                   className="ml-2 inline-flex items-center"
                 >
                   <KeyboardReturnRounded />
-                  <span className="sr-only">
-                    返回
-                    {id}
-                  </span>
+                  <span className="sr-only">Back to {id}</span>
                 </a>
               </li>
             )
