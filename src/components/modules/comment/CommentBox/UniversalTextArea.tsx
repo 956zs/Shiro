@@ -72,7 +72,6 @@ export const UniversalTextArea: Component = ({ className }) => {
             $ta.selectionStart = shouldMoveToPos
             $ta.selectionEnd = shouldMoveToPos
             $ta.focus()
-            // 上面设置的光标，可能不在可见区域内，因此 scroll 到光标所在位置
             scrollTextareaToCursor(taRef)
           })
         }
@@ -131,7 +130,7 @@ export const UniversalTextArea: Component = ({ className }) => {
                 tabIndex={0}
               >
                 <i className="i-mingcute-emoji-2-line" />
-                <span className="sr-only">表情</span>
+                <span className="sr-only">Emoji</span>
               </div>
             }
             headless

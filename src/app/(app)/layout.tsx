@@ -56,26 +56,7 @@ export const generateMetadata = async (): Promise<Metadata> => {
     },
     description: seo.description,
     keywords: seo.keywords?.join(',') || '',
-    icons: [
-      {
-        url: config.site.favicon,
-        type: 'image/svg+xml',
-        sizes: 'any',
-      },
-      {
-        rel: 'icon',
-        type: 'image/svg+xml',
-        url: config.site.favicon,
-        media: '(prefers-color-scheme: light)',
-      },
-      {
-        rel: 'icon',
-        type: 'image/svg+xml',
-        url: config.site.faviconDark || config.site.favicon,
-
-        media: '(prefers-color-scheme: dark)',
-      },
-    ],
+    icons: [],
 
     robots: {
       index: true,
@@ -161,17 +142,20 @@ export default async function RootLayout(props: PropsWithChildren) {
           <AccentColorStyleInjector color={themeConfig.config.color} />
 
           <link
-            rel="shortcut icon"
-            href={themeConfig.config.site.faviconDark}
-            type="image/x-icon"
-            media="(prefers-color-scheme: dark)"
+            rel="icon"
+            type="image/png"
+            href="/favicon-96x96.png"
+            sizes="96x96"
           />
+          <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+          <link rel="shortcut icon" href="/favicon.ico" />
           <link
-            rel="shortcut icon"
-            href={themeConfig.config.site.favicon}
-            type="image/x-icon"
-            media="(prefers-color-scheme: light)"
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="/apple-touch-icon.png"
           />
+          <meta name="apple-mobile-web-app-title" content="n1cat's blog" />
+          <link rel="manifest" href="/site.webmanifest" />
           <ScriptInjectProvider />
         </head>
         <body

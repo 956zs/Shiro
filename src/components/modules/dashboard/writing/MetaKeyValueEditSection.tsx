@@ -36,7 +36,7 @@ export const MetaKeyValueEditSection: FC<MetaKeyValueEditSectionProps> = (
   const { present } = useModalStack()
   const handlePresentModal = useEventCallback(() => {
     present({
-      title: `编辑元信息`,
+      title: `Edit Meta Information`,
       clickOutsideToDismiss: false,
       content: ({ dismiss }) => (
         <EditorModal
@@ -55,7 +55,7 @@ export const MetaKeyValueEditSection: FC<MetaKeyValueEditSectionProps> = (
         <Label>Meta</Label>
 
         <StyledButton variant="secondary" onClick={handlePresentModal}>
-          编辑
+          Edit
         </StyledButton>
       </div>
       <HighLighterPrismCdn key={jsonString} lang="json" content={jsonString} />

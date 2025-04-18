@@ -35,7 +35,7 @@ export const CategorySelector = () => {
   )
 
   return (
-    <SidebarSection label="分类">
+    <SidebarSection label="Category">
       <Select<string>
         isLoading={isLoading}
         onChange={handleSelectionChange}
