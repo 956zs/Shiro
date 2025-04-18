@@ -10,7 +10,7 @@ export const Empty: Component = ({ className }) => {
     >
       <$404SVG className="size-[400px]" />
       <p className="pointer-events-auto">
-        在这个星球上还没有知识，去其他地方探索吧。
+        This planet has no knowledge yet, explore other places!
       </p>
     </div>
   )
