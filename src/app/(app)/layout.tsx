@@ -157,6 +157,7 @@ export default async function RootLayout(props: PropsWithChildren) {
           <meta name="apple-mobile-web-app-title" content="n1cat's blog" />
           <link rel="manifest" href="/site.webmanifest" />
           <ScriptInjectProvider />
+          <meta name="theme-color" content="#00495C" />
         </head>
         <body
           className={`${sansFont.variable} ${serifFont.variable} m-0 h-full p-0 font-sans`}
