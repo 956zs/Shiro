@@ -118,7 +118,7 @@ export const useCreatePost = () => {
       })
     },
     onSuccess: () => {
-      toast.success('创建成功')
+      toast.success('Created successfully')
       resetAutoSaver('post')
     },
   })
@@ -146,7 +146,7 @@ export const useUpdatePost = () => {
       })
     },
     onSuccess: ({ id }) => {
-      toast.success('更新成功')
+      toast.success('Updated successfully')
       resetAutoSaver('post', id)
     },
   })

@@ -101,7 +101,7 @@ Original link is <${articleUrl}></span><br ><br >`
             'tags' in data
               ? data.tags.toString()
               : this.isNoteModel(data)
-                ? '手记'
+                ? 'Note'
                 : '',
           publishedAt: data.created,
         }

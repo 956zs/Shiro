@@ -291,11 +291,11 @@ export const ImageLazy: Component<
           {imageLoadStatus === ImageLoadStatus.Error && (
             <div className="center absolute inset-0 z-[1] flex flex-col gap-8">
               <i className="i-mingcute-close-line text-4xl text-red-500" />
-              <span>图片加载失败</span>
+              <span>Image failed to load</span>
 
               <Divider className="w-[80px] opacity-80" />
               <a href={src} target="_blank" rel="noreferrer">
-                <span>查看原图</span>
+                <span>View original image</span>
               </a>
             </div>
           )}
@@ -521,7 +521,7 @@ const OptimizedImage = memo(
                     'FocalLengthIn35mmFilm',
                   )
                   if (focalLength35mm) {
-                    return `${focalLength35mm}mm (等效)`
+                    return `${focalLength35mm}mm (equivalent)`
                   }
 
                   return

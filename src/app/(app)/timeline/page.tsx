@@ -122,7 +122,7 @@ export default function TimelinePage() {
       const year = date.getFullYear()
       const data: MapType = {
         title: post.title,
-        meta: [post.category.name, '博文'],
+        meta: [post.category.name, 'Post'],
         date,
         href: `/posts/${post.category.slug}/${post.slug}`,
 
@@ -144,9 +144,9 @@ export default function TimelinePage() {
       const data: MapType = {
         title: note.title,
         meta: [
-          note.mood ? `心情：${note.mood}` : undefined,
-          note.weather ? `天气：${note.weather}` : undefined,
-          '手记',
+          note.mood ? `Mood: ${note.mood}` : undefined,
+          note.weather ? `Weather: ${note.weather}` : undefined,
+          'Note',
         ].filter(Boolean) as string[],
         date,
         href: `/notes/${note.nid}`,

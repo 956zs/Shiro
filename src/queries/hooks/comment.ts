@@ -38,10 +38,10 @@ export const useUpdateCommentStateMutation = (
     },
     onSuccess: (...rest) => {
       options?.onSuccess?.apply(null, rest as any)
-      toast.success('操作成功')
+      toast.success('Operation successful')
     },
     onError: () => {
-      toast.error('操作失败')
+      toast.error('Operation failed')
     },
   })
 }
@@ -66,11 +66,11 @@ export const useDeleteCommentMutation = (options?: MutationOptions<any>) => {
       )
     },
     onSuccess: (...rest) => {
-      toast.success('删除成功')
+      toast.success('Deleted successfully')
       options?.onSuccess?.apply(null, rest as any)
     },
     onError: () => {
-      toast.error('删除失败')
+      toast.error('Delete failed')
     },
   })
 }
@@ -99,14 +99,14 @@ export const useReplyCommentMutation = () => {
       )
     },
     onSuccess: (_) => {
-      toast.success('回复成功')
+      toast.success('Replied successfully')
     },
     onError: () => {
       queryClient.invalidateQueries({
         queryKey: commentAdmin.byState(state).queryKey,
       })
 
-      toast.error('回复失败')
+      toast.error('Reply failed')
     },
   })
 }

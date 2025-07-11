@@ -257,7 +257,7 @@ const windsock = [
   {
     title: 'Leap',
     icon: RMixPlanet,
-    path: 'https://travel.moe/go.html',
+    path: 'https://info.n1cat.xyz',
   },
 ]
 

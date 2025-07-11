@@ -6,7 +6,7 @@ import { defineRouteConfig } from '~/components/modules/dashboard/utils/helper'
 
 export const config = defineRouteConfig({
   priority: 3,
-  title: '分类',
+  title: 'Category',
   icon: <i className="i-mingcute-cat-line" />,
 })
 export function Component() {

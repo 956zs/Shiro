@@ -39,7 +39,7 @@ import { adminQueries } from '~/queries/definition'
 import { useCreateNote, useUpdateNote } from '~/queries/definition/note'
 
 export const config = defineRouteConfig({
-  title: '编辑',
+  title: 'Edit',
   icon: <i className="i-mingcute-edit-line" />,
   priority: 2,
 })
@@ -110,7 +110,7 @@ const EditPage: FC<{
             <div />
           ) : (
             <span>
-              {props.initialData ? <>编辑「{editingData.title}」</> : '撰写'}
+              {props.initialData ? <>Edit "{editingData.title}"</> : 'Write'}
             </span>
           )}
           <ActionButtonGroup initialData={props.initialData} />
@@ -118,7 +118,7 @@ const EditPage: FC<{
             middleSlot={NoteNid}
             titleLabel={
               created
-                ? `记录 ${created.getFullYear()} 年第 ${dayOfYear()} 天`
+                ? `Record Day ${dayOfYear()} of ${created.getFullYear()}`
                 : undefined
             }
           />
@@ -229,7 +229,7 @@ const ActionButtonGroup = ({ initialData }: { initialData?: NoteDto }) => {
               })
           }}
         >
-          {initialData ? '保存' : '发布'}
+          {initialData ? 'Save' : 'Publish'}
         </StyledButton>
       </div>
     </>

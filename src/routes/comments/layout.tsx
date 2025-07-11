@@ -1,5 +1,5 @@
 export const config = {
-  title: '评论',
+  title: 'Comments',
   icon: <i className="i-mingcute-comment-line" />,
   priority: 4,
 }

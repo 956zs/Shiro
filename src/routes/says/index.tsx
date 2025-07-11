@@ -22,7 +22,7 @@ export const Component = () => {
         className="center ml-auto flex duration-200"
       >
         <i className="i-mingcute-add-circle-line" />
-        新建
+        New
       </StyledButton>
 
       <main className="mt-10">
@@ -33,7 +33,7 @@ export const Component = () => {
 }
 
 export const config = defineRouteConfig({
-  title: '一言',
+  title: 'Hitokoto',
   icon: <i className="i-mingcute-comment-2-line" />,
   priority: 5,
 })

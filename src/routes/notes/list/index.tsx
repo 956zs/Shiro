@@ -87,9 +87,9 @@ const cardSlot: CardProps<NoteModel>['slots'] = {
             wrapperClassName="text-xs"
             as="span"
             type="tooltip"
-            triggerElement="(已编辑)"
+            triggerElement="(Edited)"
           >
-            编辑于 <RelativeTime date={data.modified} />
+            Edited at <RelativeTime date={data.modified} />
           </FloatPopover>
         )}
         {data.topic && (
@@ -107,7 +107,7 @@ const cardSlot: CardProps<NoteModel>['slots'] = {
             }
           >
             <div className="flex flex-col gap-1">
-              <div>专栏：{data.topic.name}</div>
+              <div>Column: {data.topic.name}</div>
             </div>
           </FloatPopover>
         )}
@@ -129,7 +129,7 @@ const cardSlot: CardProps<NoteModel>['slots'] = {
 }
 
 export const config = defineRouteConfig({
-  title: '列表',
+  title: 'List',
   icon: <i className="i-mingcute-pen-line" />,
   priority: 1,
 })
