@@ -21,15 +21,15 @@ export default function GlobalError({
   return (
     <html>
       <head>
-        <title>禁止访问或者 API 服务出现问题</title>
+        <title>Access Denied or API Service Error</title>
       </head>
       <body>
         <NormalContainer>
-          <h1 className="mb-4">禁止访问或者 API 服务出现问题</h1>
+          <h1 className="mb-4">Access Denied or API Service Error</h1>
           <div className="flex justify-center">
             <LazyMotion features={domAnimation}>
               <StyledButton onClick={() => location.reload()}>
-                重试
+                Retry
               </StyledButton>
             </LazyMotion>
           </div>

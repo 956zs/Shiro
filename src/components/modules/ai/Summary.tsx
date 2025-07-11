@@ -40,7 +40,7 @@ export const AISummary: FC<AiSummaryProps> = (props) => {
         type: 'page',
       }
     } else {
-      throw new Error('未知类型')
+      throw new Error('Unknown type')
     }
 
     return payload
@@ -56,7 +56,7 @@ export const AISummary: FC<AiSummaryProps> = (props) => {
           JSON.stringify(payload),
         )}&lang=${navigator.language}`,
       ).then((res) => res.json())
-      if (!data) throw new Error('请求错误')
+      if (!data) throw new Error('Request error')
       return data
     },
     retryDelay: 5000,
@@ -80,7 +80,7 @@ const SummaryContainer: Component<{
     >
       <div className="flex items-center">
         <LogosOpenaiIcon className="mr-2" />
-        AI 生成的摘要
+        AI Generated Summary
       </div>
 
       <AutoResizeHeight duration={0.3}>

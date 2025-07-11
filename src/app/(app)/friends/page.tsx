@@ -78,20 +78,20 @@ export default function Page() {
   return (
     <div>
       <header className="prose prose-p:my-2">
-        <h1>朋友们</h1>
-        <h3>海内存知己，天涯若比邻</h3>
+        <h1>Friends</h1>
+        <h3>Though miles apart, we are close at heart.</h3>
       </header>
 
       <main className="mt-10 flex w-full flex-col">
         {friends.length > 0 && (
           <>
-            {collections.length > 0 && renderTitle('我的朋友')}
+            {collections.length > 0 && renderTitle('My Friends')}
             <FriendSection data={friends} />
           </>
         )}
         {collections.length > 0 && (
           <>
-            {friends.length > 0 && renderTitle('我的收藏')}
+            {friends.length > 0 && renderTitle('My Favorites')}
             <FavoriteSection data={collections} />
           </>
         )}
@@ -100,7 +100,9 @@ export default function Page() {
           <>
             <Collapse
               title={
-                <div className="mt-8 font-bold">以下站点无法访问，已失联</div>
+                <div className="mt-8 font-bold">
+                  The following sites are unreachable
+                </div>
               }
             >
               <OutdateSection data={outdated} />
@@ -111,7 +113,9 @@ export default function Page() {
           <>
             <Collapse
               title={
-                <div className="mt-8 font-bold">以下站点不合规，已被禁止</div>
+                <div className="mt-8 font-bold">
+                  The following sites are banned
+                </div>
               }
             >
               <BannedSection data={banned} />
@@ -264,19 +268,24 @@ const ApplyLinkInfo: FC = () => {
   })
   const { present } = useModalStack()
   if (!canApply) {
-    return <NotSupport className="mt-20" text="主人禁止了申请友链。" />
+    return (
+      <NotSupport
+        className="mt-20"
+        text="The owner has disabled friend link applications."
+      />
+    )
   }
   return (
     <>
       <div className="prose mt-20">
         <Markdown>
           {[
-            `- 申请友链前请**务必确保**贵站有我站的友链，若审批通过后移除本站链接，本站也将移除友链，并加入黑名单。`,
-            `- 若站点长时间无法访问，我会删除您的友链，恢复后可再次申请。`,
-            `- 确保您的网站不存在政治敏感问题及违法内容。没有过多的广告、无恶意软件、脚本。且转载文章须注明出处。`,
-            `- 确保站点全局启用 HTTPS`,
-            `- 您需要有自己的独立域名，暂且不同意公有子域名或免费域名的友链申请 (如 github.io, vercel.app, eu.org, js.cool, .tk, .ml, .cf 等)`,
-            `- 暂时不同意商业及非个人的网站的友链申请`,
+            `- Please make sure your site has my link before applying. If you remove my link after approval, your link will also be removed and blacklisted.`,
+            `- If your site is inaccessible for a long time, your link will be deleted. You can reapply after recovery.`,
+            `- Make sure your site does not contain politically sensitive or illegal content. No excessive ads, malware, or scripts. Reposted articles must credit the source.`,
+            `- Make sure your site uses HTTPS globally.`,
+            `- You need your own domain. Public or free domains (e.g. github.io, vercel.app, eu.org, js.cool, .tk, .ml, .cf, etc.) are not accepted.`,
+            `- Commercial and non-personal sites are not accepted for now.`,
           ].join('\n\n')}
         </Markdown>
         <Markdown className="[&_p]:!my-1">
@@ -297,13 +306,13 @@ const ApplyLinkInfo: FC = () => {
         className="mt-5"
         onClick={() => {
           present({
-            title: '我想和你交朋友！',
+            title: 'I want to be your friend!',
 
             content: () => <FormModal />,
           })
         }}
       >
-        和我做朋友吧！
+        Be my friend!
       </StyledButton>
     </>
   )
@@ -314,75 +323,75 @@ const FormModal = () => {
   const [inputs] = useState(() => [
     {
       name: 'author',
-      placeholder: '昵称 *',
+      placeholder: 'Nickname *',
       rules: [
         {
           validator: (value: string) => !!value,
-          message: '昵称不能为空',
+          message: 'Nickname cannot be empty',
         },
         {
           validator: (value: string) => value.length <= 20,
-          message: '昵称不能超过20个字符',
+          message: 'Nickname cannot exceed 20 characters',
         },
       ],
     },
     {
       name: 'name',
-      placeholder: '站点标题 *',
+      placeholder: 'Site Title *',
       rules: [
         {
           validator: (value: string) => !!value,
-          message: '站点标题不能为空',
+          message: 'Site title cannot be empty',
         },
         {
           validator: (value: string) => value.length <= 20,
-          message: '站点标题不能超过20个字符',
+          message: 'Site title cannot exceed 20 characters',
         },
       ],
     },
     {
       name: 'url',
-      placeholder: '网站 * https://',
+      placeholder: 'Website * https://',
       rules: [
         {
           validator: isHttpsUrl,
-          message: '请输入正确的网站链接 https://',
+          message: 'Please enter a valid website link https://',
         },
       ],
     },
     {
       name: 'avatar',
-      placeholder: '头像链接 * https://',
+      placeholder: 'Avatar Link * https://',
       rules: [
         {
           validator: isHttpsUrl,
-          message: '请输入正确的头像链接 https://',
+          message: 'Please enter a valid avatar link https://',
         },
       ],
     },
     {
       name: 'email',
-      placeholder: '留下你的邮箱哦 *',
+      placeholder: 'Your email *',
 
       rules: [
         {
           validator: isEmail,
-          message: '请输入正确的邮箱',
+          message: 'Please enter a valid email',
         },
       ],
     },
     {
       name: 'description',
-      placeholder: '一句话描述一下自己吧 *',
+      placeholder: 'Describe yourself in one sentence *',
 
       rules: [
         {
           validator: (value: string) => !!value,
-          message: '一句话描述一下自己吧',
+          message: 'Please describe yourself in one sentence',
         },
         {
           validator: (value: string) => value.length <= 50,
-          message: '一句话描述不要超过50个字啦',
+          message: 'Description must not exceed 50 characters',
         },
       ],
     },
@@ -400,7 +409,7 @@ const FormModal = () => {
         .applyLink({ ...(currentValues as any) })
         .then(() => {
           dismissTop()
-          toast.success('好耶！')
+          toast.success('Yay!')
         })
         .catch((err) => {
           if (err instanceof RequestError)
@@ -424,7 +433,7 @@ const FormModal = () => {
       ))}
 
       <StyledButton variant="primary" type="submit">
-        好耶！
+        Yay!
       </StyledButton>
     </Form>
   )

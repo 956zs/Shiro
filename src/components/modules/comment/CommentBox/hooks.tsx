@@ -193,7 +193,7 @@ export const useSendComment = () => {
                   },
                 })
                 .then(() => {
-                  toast.success('已同步到碎碎念')
+                  toast.success('Synced to Thoughts')
                 })
 
             return res
@@ -214,10 +214,10 @@ export const useSendComment = () => {
       afterSubmit?.()
 
       const toastCopy = isLogged
-        ? '发表成功啦~'
+        ? 'Comment posted!'
         : isReply
-          ? '感谢你的回复！'
-          : '感谢你的评论！'
+          ? 'Thank you for your reply!'
+          : 'Thank you for your comment!'
 
       const commentListQueryKey = buildCommentsQueryKey(originalRefId)
 

@@ -52,13 +52,13 @@ const iconSet: Record<
   },
   rss: ['RSS', <i className="i-mingcute-rss-line" />, '#FFA500', (id) => id],
   bilibili: [
-    '哔哩哔哩',
+    'Bilibili',
     <BilibiliIcon />,
     '#00A1D6',
     (id) => `https://space.bilibili.com/${id}`,
   ],
   netease: [
-    '网易云音乐',
+    'NetEase Music',
     <NeteaseCloudMusicIcon />,
     '#C20C0C',
     (id) => `https://music.163.com/#/user/home?id=${id}`,
@@ -70,13 +70,13 @@ const iconSet: Record<
     (id) => `https://wpa.qq.com/msgrd?v=3&uin=${id}&site=qq&menu=yes`,
   ],
   wechat: [
-    '微信',
+    'WeChat',
     <i className="i-mingcute-wechat-fill" />,
     '#2DC100',
     (id) => id,
   ],
   weibo: [
-    '微博',
+    'Weibo',
     <i className="i-mingcute-weibo-line" />,
     '#E6162D',
     (id) => `https://weibo.com/${id}`,

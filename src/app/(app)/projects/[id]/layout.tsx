@@ -1,7 +1,7 @@
 import type { PropsWithChildren } from 'react'
 
 export const metadata = {
-  title: '项目详情',
+  title: 'Project Details',
 }
 export default function Page(props: PropsWithChildren) {
   return props.children

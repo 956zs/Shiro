@@ -7,11 +7,11 @@ export const SummaryInput = () => {
   const [summary, setSummary] = usePostModelSingleFieldAtom('summary')
 
   return (
-    <SidebarSection label="摘要" className="relative">
+    <SidebarSection label="Summary" className="relative">
       <TextArea
         className="p-2 focus-visible:border-accent"
         rounded="md"
-        placeholder="摘要"
+        placeholder="Summary"
         value={summary || ''}
         onChange={(e) => {
           setSummary(e.target.value)

@@ -63,16 +63,16 @@ export const ActivityCard = ({ activity }: { activity: ReactActivityType }) => {
                   />
                 )}
                 <span className="font-medium">{activity.author}</span>{' '}
-                <small>在</small>{' '}
+                <small>in</small>{' '}
                 <Link className="shiro-link--underline" href={toLink}>
                   <b>
                     {activity.title ||
                       (activity.type === CollectionRefTypes.Recently
-                        ? '一条想法中'
+                        ? 'in a thought'
                         : null)}
                   </b>
                 </Link>{' '}
-                <small>说：</small>
+                <small>said:</small>
               </div>
             </div>
             <div className="flex pl-8">
@@ -96,7 +96,7 @@ export const ActivityCard = ({ activity }: { activity: ReactActivityType }) => {
               <FaSolidFeatherAlt />
             </div>
             <div className="space-x-2">
-              <small>发布了</small>{' '}
+              <small>published</small>{' '}
               <Link href={routeBuilder(Routes.Note, { id: activity.nid })}>
                 <b>{activity.title}</b>
               </Link>
@@ -111,7 +111,7 @@ export const ActivityCard = ({ activity }: { activity: ReactActivityType }) => {
               <IcTwotoneSignpost />
             </div>
             <div className="space-x-2">
-              <small>发布了</small>{' '}
+              <small>published</small>{' '}
               <Link href={`/posts/${activity.slug}`}>
                 <b>{activity.title}</b>
               </Link>
@@ -169,7 +169,7 @@ export const ActivityCard = ({ activity }: { activity: ReactActivityType }) => {
             break
           }
           default: {
-            TitleLink = <b>已删除的内容</b>
+            TitleLink = <b>Deleted content</b>
           }
         }
         return (
@@ -178,7 +178,7 @@ export const ActivityCard = ({ activity }: { activity: ReactActivityType }) => {
               <i className="i-mingcute-heart-line" />
             </span>
             <div className="space-x-2">
-              <small>有人点赞了</small> {TitleLink}
+              <small>Someone liked</small> {TitleLink}
             </div>
           </div>
         )

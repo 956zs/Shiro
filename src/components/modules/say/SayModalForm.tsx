@@ -31,14 +31,14 @@ export const SayModalForm: FC<{
           ...values,
         },
       })
-      toast.success('更新成功')
+      toast.success('Update successful')
     } else {
       await apiClient.say.proxy.post({
         data: {
           ...values,
         },
       })
-      toast.success('发布成功')
+      toast.success('Posted successfully')
     }
 
     dismiss()
@@ -56,24 +56,24 @@ export const SayModalForm: FC<{
         }}
         className="max-h-[300px] min-h-[120px]"
         name="text"
-        placeholder={editingData?.text || '内容'}
+        placeholder={editingData?.text || 'Content'}
         required
         defaultValue={editingData?.text}
       />
       <FormInput
         name="source"
-        placeholder={editingData?.source || '来源'}
+        placeholder={editingData?.source || 'Source'}
         defaultValue={editingData?.source}
       />
       <FormInput
         name="author"
-        placeholder={editingData?.author || '作者'}
+        placeholder={editingData?.author || 'Author'}
         defaultValue={editingData?.author}
       />
 
       <div className="flex justify-end">
         <StyledButton type="submit">
-          {editingData ? '更新' : '发布'}
+          {editingData ? 'Update' : 'Post'}
         </StyledButton>
       </div>
     </Form>

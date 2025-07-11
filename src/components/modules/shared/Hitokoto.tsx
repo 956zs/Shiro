@@ -26,7 +26,7 @@ export const Hitokoto = () => {
         creator: data.creator,
       }).find(Boolean)
       if (!data.hitokoto) {
-        return '没有获取到句子信息'
+        return 'No quote information available.'
       } else {
         return data.hitokoto + (postfix ? ` —— ${postfix}` : '')
       }
@@ -46,7 +46,7 @@ export const Hitokoto = () => {
         <MotionButtonBase
           onClick={() => {
             navigator.clipboard.writeText(hitokoto)
-            toast.success('已复制')
+            toast.success('Copied')
             toast.info(hitokoto)
           }}
         >
@@ -58,18 +58,18 @@ export const Hitokoto = () => {
 }
 
 export enum SentenceType {
-  '动画' = 'a',
-  '漫画' = 'b',
-  '游戏' = 'c',
-  '文学' = 'd',
-  '原创' = 'e',
-  '来自网络' = 'f',
-  '其他' = 'g',
-  '影视' = 'h',
-  '诗词' = 'i',
-  '网易云' = 'j',
-  '哲学' = 'k',
-  '抖机灵' = 'l',
+  '动画' = 'a', // Animation
+  '漫画' = 'b', // Comic
+  '游戏' = 'c', // Game
+  '文学' = 'd', // Literature
+  '原创' = 'e', // Original
+  '来自网络' = 'f', // From the Internet
+  '其他' = 'g', // Other
+  '影视' = 'h', // Film/TV
+  '诗词' = 'i', // Poetry
+  '网易云' = 'j', // NetEase Cloud
+  '哲学' = 'k', // Philosophy
+  '抖机灵' = 'l', // Witty
 }
 export const fetchHitokoto = async (
   type: SentenceType[] | SentenceType = SentenceType.文学,

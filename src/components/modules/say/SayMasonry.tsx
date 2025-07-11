@@ -115,15 +115,15 @@ const Item = memo<{
         <Markdown className="mb-2" options={options}>{`${say.text}`}</Markdown>
         <div className="flex flex-wrap text-sm text-base-content/60 md:justify-between">
           <div className="mb-2 w-full md:mb-0 md:w-auto">
-            <span className="mr-2">发布于</span>
+            <span className="mr-2">Published</span>
             <RelativeTime date={say.created} />
           </div>
           <div className="w-full text-right md:ml-auto md:w-auto">
             <div>
-              {hasSource && `出自“${say.source}”`}
+              {hasSource && `From "${say.source}"`}
               {hasSource && hasAuthor && ', '}
-              {hasAuthor && `作者：${say.author}`}
-              {!hasAuthor && !hasSource && '站长说'}
+              {hasAuthor && `Author: ${say.author}`}
+              {!hasAuthor && !hasSource && 'Site Owner'}
             </div>
           </div>
         </div>
@@ -136,7 +136,7 @@ const Item = memo<{
             )}
           >
             <i className="i-mingcute-quill-pen-line" />
-            <span className="sr-only">编辑</span>
+            <span className="sr-only">Edit</span>
           </button>
         )}
       </m.blockquote>

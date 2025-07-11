@@ -150,7 +150,7 @@ const SearchPanelImpl = () => {
             case 'note': {
               return {
                 title: item.title,
-                subtitle: '手记',
+                subtitle: 'Note',
                 id: item.id,
                 url: `/notes/${item.nid}`,
               }
@@ -158,7 +158,7 @@ const SearchPanelImpl = () => {
             case 'page': {
               return {
                 title: item.title,
-                subtitle: '页面',
+                subtitle: 'Page',
                 id: item.id,
                 url: `/${item.slug}`,
               }
@@ -274,7 +274,7 @@ const SearchPanelImpl = () => {
                 {!data && isLoading && isFetching && (
                   <div className="loading-dots text-[30px]" />
                 )}
-                <span>{!!keyword && '无内容'}</span>
+                <span>{!!keyword && 'No content found'}</span>
               </div>
             </div>
           ) : (
@@ -305,7 +305,7 @@ const SearchPanelImpl = () => {
               type="tooltip"
               triggerElement={<i className="i-mingcute-download-2-line" />}
             >
-              下载搜索索引文件以便导入 algolia 搜索
+              Download the search index file for Algolia import
             </FloatPopover>
           </MotionButtonBase>
         ) : (

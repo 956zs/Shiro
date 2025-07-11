@@ -27,7 +27,7 @@ export const NoteFontSettingFab = () => {
         }
       >
         <main>
-          <div className="mb-4 text-lg font-medium">字形选择</div>
+          <div className="mb-4 text-lg font-medium">Font Style</div>
           <div className="grid w-[200px] grid-cols-2 grid-rows-2 gap-4">
             <FontItem type="serif">
               <SerifFontSvg />

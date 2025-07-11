@@ -13,7 +13,7 @@ export const PostPagination: FC<{ pagination: Pager }> = ({ pagination }) => {
       {pagination.hasPrevPage ? (
         <Link href={`/posts?page=${pagination.currentPage - 1}`}>
           <MotionButtonBase tabIndex={-1} className={className}>
-            上一页
+            Previous Page
           </MotionButtonBase>
         </Link>
       ) : (
@@ -22,7 +22,7 @@ export const PostPagination: FC<{ pagination: Pager }> = ({ pagination }) => {
       {pagination.hasNextPage && (
         <Link href={`/posts?page=${pagination.currentPage + 1}`}>
           <MotionButtonBase tabIndex={-1} className={className}>
-            下一页
+            Next Page
           </MotionButtonBase>
         </Link>
       )}

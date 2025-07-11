@@ -14,7 +14,7 @@ export const TitleInput: FC<{
       color="primary"
       labelPlacement="inside"
       labelClassName="text-xs"
-      label={label || '标题'}
+      label={label || 'Title'}
       inputClassName="text-base font-medium"
       value={title}
       onChange={(e) => setTitle(e.target.value)}

@@ -18,7 +18,7 @@ export const login = async (username?: string, password?: string) => {
   if (username && password) {
     const user = await apiClient.user.login(username, password).catch((err) => {
       console.error(err)
-      toast.error('再试试哦')
+      toast.error('Please try again')
       throw err
     })
     if (user) {
@@ -27,7 +27,7 @@ export const login = async (username?: string, password?: string) => {
       jotaiStore.set(isLoggedAtom, true)
 
       await fetchAppUrl()
-      toast.success(`欢迎回来，${jotaiStore.get(ownerAtom)?.name}`)
+      toast.success(`Welcome back, ${jotaiStore.get(ownerAtom)?.name}`)
     }
 
     return true
@@ -37,7 +37,7 @@ export const login = async (username?: string, password?: string) => {
   if (!token) {
     return
   }
-  // const outdateToast = () => toast.warn('登录身份过期了，再登录一下吧！')
+  // const outdateToast = () => toast.warn('Login session expired, please log in again!')
   const validated = await apiClient.user
     .checkTokenValid(token)
     .then((res) => !!res.ok)

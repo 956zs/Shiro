@@ -22,8 +22,8 @@ export const XLogSummary: FC<XLogSummaryProps> = (props) => {
           revalidate: 60 * 10,
         },
       }).then((res) => res.json())
-      if (!data) throw new Error('请求错误')
-      if (!data.summary) throw new Error('内容暂时无法获取')
+      if (!data) throw new Error('Request error')
+      if (!data.summary) throw new Error('Content is temporarily unavailable')
       return data
     },
     enabled: !!cid,
@@ -40,7 +40,7 @@ export const XLogSummary: FC<XLogSummaryProps> = (props) => {
     >
       <div className="flex items-center">
         <i className="i-mingcute-sparkles-line mr-2 text-lg" />
-        AI 生成的摘要
+        AI Generated Summary
       </div>
 
       <AutoResizeHeight duration={0.3}>
@@ -57,11 +57,11 @@ export const XLogSummary: FC<XLogSummaryProps> = (props) => {
         </div>
         {isLoading && (
           <p className="mt-3 border-slate-200 text-right text-sm dark:border-slate-800 ">
-            (此服务由{' '}
+            (This service is powered by{' '}
             <a href="https://xlog.app" target="_blank" rel="noreferrer">
               xLog
             </a>{' '}
-            驱动)
+            )
           </p>
         )}
       </AutoResizeHeight>

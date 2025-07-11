@@ -49,7 +49,7 @@ export const BrowserSupport = () => {
           },
         }),
       )
-      alert('您的浏览器版本过低，请升级浏览器')
+      alert('Your browser version is too low, please upgrade your browser')
     }
   }, [])
   return null

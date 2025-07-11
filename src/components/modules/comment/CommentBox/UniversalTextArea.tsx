@@ -131,7 +131,7 @@ export const UniversalTextArea: Component = ({ className }) => {
                 tabIndex={0}
               >
                 <i className="i-mingcute-emoji-2-line" />
-                <span className="sr-only">表情</span>
+                <span className="sr-only">Emoji</span>
               </div>
             }
             headless

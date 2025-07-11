@@ -128,7 +128,7 @@ export default async function RootLayout(props: PropsWithChildren) {
 
   if (data instanceof PreRenderError) {
     return (
-      <html lang="zh-CN" className="noise themed" suppressHydrationWarning>
+      <html lang="en" className="noise themed" suppressHydrationWarning>
         <head>
           <PublicEnvScript />
 
@@ -138,8 +138,8 @@ export default async function RootLayout(props: PropsWithChildren) {
           className={`${sansFont.variable} ${serifFont.variable} m-0 h-full p-0 font-sans`}
         >
           <div className="center flex h-screen">
-            初始数据的获取失败，请检查 API
-            服务器是否正常运行。接口请求错误信息：
+            Failed to fetch initial data. Please check if the API server is
+            running. Error message:
             <br />
             {data.message}
           </div>
@@ -152,7 +152,7 @@ export default async function RootLayout(props: PropsWithChildren) {
 
   return (
     <AppFeatureProvider tmdb={!!process.env.TMDB_API_KEY}>
-      <html lang="zh-CN" className="noise themed" suppressHydrationWarning>
+      <html lang="en" className="noise themed" suppressHydrationWarning>
         <head>
           <PublicEnvScript />
           <Global />

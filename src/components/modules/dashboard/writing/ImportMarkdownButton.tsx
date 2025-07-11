@@ -62,7 +62,7 @@ export const ImportMarkdownButton: FC<{
   return (
     <>
       <StyledButton className="rounded-lg" variant="secondary" onClick={onOpen}>
-        导入
+        Import
       </StyledButton>
       <DeclarativeModal
         modalClassName="z-[999] pointer-events-auto"
@@ -83,7 +83,7 @@ export const ImportMarkdownButton: FC<{
 
         <DeclarativeModal.FooterAction>
           <StyledButton variant="primary" onClick={handleParseContent}>
-            好
+            OK
           </StyledButton>
         </DeclarativeModal.FooterAction>
       </DeclarativeModal>

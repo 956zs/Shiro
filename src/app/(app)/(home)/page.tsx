@@ -187,7 +187,8 @@ const Hero = () => {
           )}
         >
           <small className="text-center">
-            当第一颗卫星飞向大气层外，我们便以为自己终有一日会征服宇宙。
+            When the first satellite flew beyond the atmosphere, we thought we
+            would one day conquer the universe.
           </small>
           <span className="mt-8 animate-bounce">
             <i className="i-mingcute-right-line rotate-90 text-2xl" />
@@ -216,45 +217,45 @@ const ActivityScreen = () => {
 
 const windsock = [
   {
-    title: '文稿',
+    title: 'Articles',
     path: '/posts',
     type: 'Post',
     subMenu: [],
     icon: IcTwotoneSignpost,
   },
   {
-    title: '手记',
+    title: 'Notes',
     type: 'Note',
     path: '/notes',
     icon: FaSolidFeatherAlt,
   },
   {
-    title: '度过的时光呀',
+    title: 'Moments in Time',
     icon: FaSolidHistory,
     path: '/timeline',
   },
   {
-    title: '朋友们',
+    title: 'Friends',
     icon: FaSolidUserFriends,
     path: '/friends',
   },
   {
-    title: '写下一点思考',
+    title: 'Write a Thought',
     icon: MdiLightbulbOn20,
     path: '/thinking',
   },
   {
-    title: '看看我做些啥',
+    title: 'See My Projects',
     icon: MdiFlask,
     path: '/projects',
   },
   {
-    title: '记录下一言',
+    title: 'Quotes',
     path: '/says',
     icon: FaSolidComments,
   },
   {
-    title: '跃迁',
+    title: 'Leap',
     icon: RMixPlanet,
     path: 'https://travel.moe/go.html',
   },
@@ -274,8 +275,8 @@ const Windsock = () => {
   return (
     <>
       <div className="center mt-28 flex flex-col">
-        <div className="my-5 text-2xl font-medium">风向标</div>
-        <div className="mb-24 opacity-90">去到别去看看？</div>
+        <div className="my-5 text-2xl font-medium">Windsock</div>
+        <div className="mb-24 opacity-90">Why not take a look around?</div>
         <ul className="flex flex-col flex-wrap gap-2 gap-y-8 opacity-80 lg:flex-row">
           {windsock.map((item, index) => {
             return (
@@ -336,7 +337,7 @@ const Windsock = () => {
                 })
               })
 
-            toast.success('谢谢你！', {
+            toast.success('Thank you!', {
               iconElement: (
                 <m.i
                   className="i-mingcute-heart-fill text-uk-red-light"
@@ -357,7 +358,7 @@ const Windsock = () => {
             })
           }}
         >
-          喜欢本站 <i className="i-mingcute-heart-fill" />{' '}
+          Like this site <i className="i-mingcute-heart-fill" />{' '}
           <NumberSmoothTransition>
             {count as any as string}
           </NumberSmoothTransition>
@@ -369,7 +370,7 @@ const Windsock = () => {
             presentSubscribe()
           }}
         >
-          订阅
+          Subscribe
           <i className="i-material-symbols-notifications-active" />
         </StyledButton>
       </div>

@@ -28,7 +28,7 @@ export const GoToAdminEditingButton: Component<Props> = (props) => {
       rel="noreferrer"
     >
       <i className="i-mingcute-quill-pen-line" />
-      <span className="sr-only">编辑</span>
+      <span className="sr-only">Edit</span>
     </a>
   )
 }

@@ -27,20 +27,20 @@ export const RelatedPostSelector = () => {
 
   return (
     <SidebarSection
-      label="关联阅读"
+      label="Related Reading"
       actions={
         <StyledButton
           variant="secondary"
           className="absolute right-0"
           onClick={() => {
             present({
-              title: '选择关联阅读',
+              title: 'Select Related Reading',
               content: () => <RealtedPostList />,
               clickOutsideToDismiss: false,
             })
           }}
         >
-          新增
+          Add New
         </StyledButton>
       }
     >
@@ -79,7 +79,7 @@ export const RelatedPostSelector = () => {
                 }}
               >
                 <i className="i-mingcute-delete-2-line text-base" />
-                <span className="sr-only">删除</span>
+                <span className="sr-only">Delete</span>
               </MotionButtonBase>
             </MotionButtonBase>
           )

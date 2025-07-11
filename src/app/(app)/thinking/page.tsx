@@ -44,8 +44,8 @@ export default function Page() {
   return (
     <div>
       <header className="prose">
-        <h1>思考</h1>
-        <h3>谢谢你听我诉说</h3>
+        <h1>Thoughts</h1>
+        <h3>Thank you for listening</h3>
       </header>
 
       <main className="mt-10">
@@ -90,7 +90,7 @@ const PostBox = () => {
         bordered={false}
         wrapperClassName="h-[150px] bg-gray-200/50 dark:bg-zinc-800/50"
         value={value}
-        placeholder="此刻在想什么？"
+        placeholder="What's on your mind?"
         onChange={(e) => {
           setValue(e.target.value)
         }}

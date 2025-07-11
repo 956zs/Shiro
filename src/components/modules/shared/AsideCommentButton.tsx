@@ -18,11 +18,11 @@ export const AsideCommentButton = (
 
   return (
     <MotionButtonBase
-      aria-label="Comment For This Post"
+      aria-label="Comment on this post"
       className="flex flex-col space-y-2"
       onClick={() => {
         present({
-          title: '评论',
+          title: 'Comment',
           content: (rest) => <CommentModal {...props} {...rest} />,
         })
       }}

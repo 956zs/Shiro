@@ -12,14 +12,14 @@ export const IpInfoPopover: Component<IpInfoPopoverProps> = (props) => {
 
   const setIpInfoText = (info: IP) => {
     setIpInfo(`IP: ${info.ip}<br />
-      城市：${
+      City: ${
         [info.countryName, info.regionName, info.cityName]
           .filter(Boolean)
           .join(' - ') || 'N/A'
       }<br />
       ISP: ${info.ispDomain || 'N/A'}<br />
-      组织：${info.ownerDomain || 'N/A'}<br />
-      范围：${info.range ? Object.values(info.range).join(' - ') : 'N/A'}
+      Organization: ${info.ownerDomain || 'N/A'}<br />
+      Range: ${info.range ? Object.values(info.range).join(' - ') : 'N/A'}
       `)
   }
 

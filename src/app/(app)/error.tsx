@@ -16,14 +16,14 @@ export default ({ error, reset }: any) => {
     <NormalContainer>
       <div className="center flex min-h-[calc(100vh-10rem)] flex-col">
         <h2 className="mb-5 text-center">
-          <p>渲染页面时出现了错误</p>
+          <p>An error occurred while rendering the page</p>
           <p>
-            多次出现错误请联系开发者 <a href="mailto:i@innei.in">Innei</a>
-            ，谢谢！
+            If this error occurs repeatedly, please contact the developer{' '}
+            <a href="mailto:i@innei.in">Innei</a>. Thank you!
           </p>
         </h2>
         <StyledButton variant="primary" onClick={() => location.reload()}>
-          刷新
+          Refresh
         </StyledButton>
       </div>
     </NormalContainer>

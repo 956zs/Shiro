@@ -15,12 +15,12 @@ import {
 } from './hooks'
 
 const copyMap = {
-  [CommentBoxMode.legacy]: '新版评论',
-  [CommentBoxMode['with-auth']]: '旧版评论',
+  [CommentBoxMode.legacy]: 'New Comment',
+  [CommentBoxMode['with-auth']]: 'Old Comment',
 }
 const SwitchCommentModeButton = () => {
   const mode = useCommentMode()
-  const copy = `转换到${copyMap[mode]}`
+  const copy = `Switch to ${copyMap[mode]}`
   return (
     <>
       <i
@@ -36,7 +36,7 @@ const SwitchCommentModeButton = () => {
 }
 export const SwitchCommentMode = () => {
   const mode = useCommentMode()
-  const copy = `转换到${copyMap[mode]}`
+  const copy = `Switch to ${copyMap[mode]}`
 
   const hasText = useCommentBoxHasText()
 

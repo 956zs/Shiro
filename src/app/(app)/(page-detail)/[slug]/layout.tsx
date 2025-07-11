@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import * as React from 'react'
 import { cache } from 'react'
 
+import { NotFound404 } from '~/components/common/404'
 import { CommentAreaRootLazy } from '~/components/modules/comment'
 import { TocFAB } from '~/components/modules/toc/TocFAB'
 import {
@@ -32,7 +33,7 @@ const getData = cache(async (params: PageParams) => {
   const data = await apiClient.page
     .getBySlug(params.slug)
     .catch(requestErrorHandler)
-  return data.$serialized
+  return data ? data.$serialized : null
 })
 
 export const generateMetadata = async ({
@@ -43,7 +44,7 @@ export const generateMetadata = async ({
   const { slug } = params
   try {
     const data = await getData(params)
-
+    if (!data) return {}
     const { title, text } = data
     const description = getSummaryFromMd(text ?? '')
 
@@ -82,6 +83,9 @@ export default definePrerenderPage<PageParams>()({
   },
 
   Component: ({ data, children }) => {
+    if (!data) {
+      return <NotFound404 />
+    }
     return (
       <>
         <CurrentPageDataProvider data={data} />

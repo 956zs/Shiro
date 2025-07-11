@@ -116,7 +116,7 @@ export function UserAuth() {
                     }}
                     icon={<i className="i-mingcute-dashboard-3-line size-4" />}
                   >
-                    轻管理
+                    Quick Admin
                   </DropdownMenuItem>
                   <DropdownMenuItem
                     onClick={() => {
@@ -127,7 +127,7 @@ export function UserAuth() {
                     }}
                     icon={<i className="i-mingcute-dashboard-2-line size-4" />}
                   >
-                    控制台
+                    Console
                   </DropdownMenuItem>
                   <DropdownMenuSeparator />
                 </Fragment>
@@ -144,7 +144,7 @@ export function UserAuth() {
                 }}
                 icon={<i className="i-mingcute-exit-line size-4" />}
               >
-                登出
+                Logout
               </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenuPortal>

@@ -33,7 +33,7 @@ export const TopicSelector = () => {
   }))
 
   return (
-    <SidebarSection label="专栏">
+    <SidebarSection label="Topic">
       <Select<string>
         isLoading={isLoading}
         onChange={handleSelectionChange}

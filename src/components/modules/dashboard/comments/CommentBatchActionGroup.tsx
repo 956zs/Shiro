@@ -30,7 +30,7 @@ export const CommentBatchActionGroup = () => {
       ids.map((id) => updateCommentState({ id, state: newState })),
     ).then(() => {
       setSelectionKeys(new Set())
-      toast.success('操作已经成功')
+      toast.success('Operation successful')
     })
   }
   const batchDelete = async () => {
@@ -38,7 +38,7 @@ export const CommentBatchActionGroup = () => {
 
     Promise.all(ids.map((id) => deleteCommentState({ id }))).then(() => {
       setSelectionKeys(new Set())
-      toast.success('操作已经成功')
+      toast.success('Operation successful')
     })
   }
   const search = useSearchParams()
@@ -65,7 +65,7 @@ export const CommentBatchActionGroup = () => {
             </RoundedIconButton>
           }
         >
-          已读
+          Mark as Read
         </FloatPopover>
       )}
 
@@ -84,7 +84,7 @@ export const CommentBatchActionGroup = () => {
             </RoundedIconButton>
           }
         >
-          垃圾
+          Spam
         </FloatPopover>
       )}
       <FloatPopover
@@ -95,7 +95,7 @@ export const CommentBatchActionGroup = () => {
             className="bg-red-200 duration-200 hover:bg-red-400 dark:bg-red-900"
             onClick={() => {
               present({
-                title: `删除 ${selectionKeys.size} 条评论`,
+                title: `Delete ${selectionKeys.size} comments`,
                 content: ({ dismiss }) => (
                   <div className="w-[400px] text-right">
                     <StyledButton
@@ -104,7 +104,7 @@ export const CommentBatchActionGroup = () => {
                         dismiss()
                       }}
                     >
-                      删除
+                      Delete
                     </StyledButton>
                   </div>
                 ),
@@ -115,7 +115,7 @@ export const CommentBatchActionGroup = () => {
           </RoundedIconButton>
         }
       >
-        删除
+        Delete
       </FloatPopover>
     </OffsetHeaderLayout>
   )

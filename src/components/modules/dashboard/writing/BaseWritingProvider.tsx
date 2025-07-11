@@ -111,7 +111,7 @@ export const useAutoSaver = <T extends { id: string }>([
 
     setTimeout(() => {
       present({
-        title: '存在为保存的数据，需要恢复吗？',
+        title: 'Unsaved data detected. Restore?',
         content: ({ dismiss }) => (
           <div className="flex justify-end">
             <StyledButton
@@ -122,7 +122,7 @@ export const useAutoSaver = <T extends { id: string }>([
                 localStorage.removeItem(nsKey)
               }}
             >
-              恢复
+              Restore
             </StyledButton>
           </div>
         ),

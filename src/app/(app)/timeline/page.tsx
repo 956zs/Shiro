@@ -111,7 +111,7 @@ export default function TimelinePage() {
 
   const memory = search.get('bookmark') || search.get('memory')
 
-  const title = !memory ? '时间线' : '回忆'
+  const title = !memory ? 'Timeline' : 'Memories'
 
   const { posts = [], notes = [] } = data
   const sortedMap = new Map<number, MapType[]>()
@@ -171,9 +171,9 @@ export default function TimelinePage() {
 
   const sortedArr = Array.from(sortedMap)
 
-  const subtitle = `共有 ${
+  const subtitle = `Total of ${
     sortedArr.flat(2).filter((i) => typeof i === 'object').length
-  } 篇文章，${!memory ? '再接再厉' : '回顾一下从前吧'}`
+  } articles, ${!memory ? 'keep going' : "let's look back"}`
 
   return (
     <NormalContainer>
@@ -185,7 +185,7 @@ export default function TimelinePage() {
           <>
             <Divider className="my-8 w-[80px]" />
             <TimelineProgress />
-            <p>活在当下，珍惜眼下</p>
+            <p>Live in the moment, cherish the present</p>
           </>
         )}
       </header>

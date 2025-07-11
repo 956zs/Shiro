@@ -20,10 +20,10 @@ export const Version = () => {
     <div className="opacity-60">
       <p className="text-center">
         <div className="inline-flex items-center">
-          Shiro 版本：{PKG.version}
+          Shiro Version: {PKG.version}
         </div>
         <br />
-        Mix Space Core 版本：{version?.version || 'N/A'}
+        Mix Space Core Version: {version?.version || 'N/A'}
         <br />
       </p>
     </div>

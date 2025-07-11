@@ -34,11 +34,11 @@ const shareList = [
   },
 
   {
-    name: '复制链接',
+    name: 'Copy Link',
     icon: <i className="i-mingcute-copy-fill" />,
     onClick: (data: ShareData) => {
       navigator.clipboard.writeText(data.url)
-      toast.success('已复制到剪贴板')
+      toast.success('Copied to clipboard')
     },
   },
 ]
@@ -61,7 +61,7 @@ export const ShareModal: FC<ShareData> = ({ url, text, title }) => {
         />
       </div>
       <div className="share-options flex flex-col gap-2">
-        分享到...
+        Share to...
         <ul className="w-[200px] flex-col gap-2 [&>li]:flex [&>li]:items-center [&>li]:space-x-2">
           {shareList.map(({ name, icon, onClick }) => (
             <li

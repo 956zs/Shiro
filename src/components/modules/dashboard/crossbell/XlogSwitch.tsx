@@ -42,7 +42,7 @@ export const XlogSwitch = () => {
       onCheckedChange={setChecked}
     >
       <span className="flex items-center gap-2">
-        同步到 XLog <XLogIcon className="size-5" />
+        Sync to XLog <XLogIcon className="size-5" />
       </span>
       <PublishEventSubscriber />
     </LabelSwitch>

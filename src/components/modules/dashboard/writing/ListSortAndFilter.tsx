@@ -14,8 +14,8 @@ const ListSortAndFilterContext = createContext({
 })
 
 export const defaultSortingKeyMap = {
-  created: '创建时间',
-  modified: '修改时间',
+  created: 'Created Time',
+  modified: 'Modified Time',
 } as Record<string, string>
 
 type SortingOrderListItem = {
@@ -26,11 +26,11 @@ type SortingOrderListItem = {
 export const defaultSortingOrderList = [
   {
     key: 'desc',
-    label: '降序',
+    label: 'Descending',
   },
   {
     key: 'asc',
-    label: '升序',
+    label: 'Ascending',
   },
 ] as SortingOrderListItem[]
 

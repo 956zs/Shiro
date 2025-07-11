@@ -26,7 +26,7 @@ export const Hitokoto = () => {
         creator: data.creator,
       }).find(Boolean)
       if (!data.hitokoto) {
-        return '没有获取到句子信息'
+        return 'No sentence information received'
       } else {
         return data.hitokoto + (postfix ? ` —— ${postfix}` : '')
       }
@@ -46,7 +46,7 @@ export const Hitokoto = () => {
         <MotionButtonBase
           onClick={() => {
             navigator.clipboard.writeText(hitokoto)
-            toast.success('已复制')
+            toast.success('Copied')
             toast.info(hitokoto)
           }}
         >

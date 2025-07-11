@@ -29,7 +29,7 @@ export class CrossBellConnector {
     await contract.walletClient.requestAddresses()
 
     if (!contract.account.address) {
-      throw new Error('未连接到 metamask')
+      throw new Error('Not connected to metamask')
     }
     this.contract = contract
     return contract
@@ -77,15 +77,15 @@ export class CrossBellConnector {
           .catch(() => '')
 
         if (!articleUrl) {
-          throw new Error('文章链接生成失败')
+          throw new Error('Failed to generate article link')
         }
 
         const contentWithFooter = `${text}
 
-<span style="text-align: right;font-size: 0.8em; float: right">此文由 [Mix Space](https://github.com/mx-space) 同步更新至 xLog
-原始链接为 <${articleUrl}></span><br ><br >`
+<span style="text-align: right;font-size: 0.8em; float: right">This article is synced to xLog by [Mix Space](https://github.com/mx-space)
+Original link is <${articleUrl}></span><br ><br >`
 
-        toast.info('正在发布到 xLog...')
+        toast.info('Publishing to xLog...')
 
         const input = {
           siteId: SITE_ID,
@@ -149,12 +149,12 @@ export class CrossBellConnector {
 
       await post().catch((err) => {
         console.error(err)
-        toast.error('xLog 发布失败')
+        toast.error('xLog publish failed')
 
         throw err
       })
 
-      toast.success('xLog 发布成功')
+      toast.success('xLog published successfully')
 
       let nextPageId = pageId
       if (!nextPageId) {
@@ -162,7 +162,7 @@ export class CrossBellConnector {
       }
 
       if (!nextPageId) {
-        toast.error('无法获取 Crossbell Note pageId 任务终止')
+        toast.error('Failed to get Crossbell Note pageId, task aborted')
         return
       }
       // update meta for pageId
@@ -174,7 +174,7 @@ export class CrossBellConnector {
         nextPageId.split('-')[1],
       )
       if (!crossbellNoteData) {
-        toast.error('无法获取 Crossbell Note 任务终止')
+        toast.error('Failed to get Crossbell Note, task aborted')
         return
       }
       const {

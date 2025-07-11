@@ -37,7 +37,7 @@ export const PreviewButton = <T extends { id: string }>(props: {
       className="rounded-lg"
       onClick={handlePreview}
     >
-      预览
+      Preview
     </StyledButton>
   )
 }

@@ -1,4 +1,3 @@
- 
 import * as Slider from '@radix-ui/react-slider'
 import { m, useDragControls, useSpring } from 'motion/react'
 import type { PropsWithChildren } from 'react'
@@ -217,7 +216,7 @@ const ControlBar = memo(() => {
       />
 
       <ActionIcon
-        label={isPaused ? '播放' : '暂停'}
+        label={isPaused ? 'Play' : 'Pause'}
         className="center relative flex"
         onClick={() => {
           if (isPaused) {
@@ -265,7 +264,7 @@ const FullScreenControl = () => {
 
   return (
     <ActionIcon
-      label={isFullScreen ? '退出全屏' : '全屏'}
+      label={isFullScreen ? 'Exit Fullscreen' : 'Fullscreen'}
       onClick={() => {
         if (!ref.current) return
 
@@ -304,7 +303,7 @@ const DownloadVideo = () => {
   })
 
   return (
-    <ActionIcon label="下载" onClick={download}>
+    <ActionIcon label="Download" onClick={download}>
       {isDownloading ? (
         <i className="i-mingcute-loading-3-fill size-5 animate-spin" />
       ) : (
@@ -335,9 +334,9 @@ const VolumeControl = () => {
       }}
     >
       {muted ? (
-        <i className="i-mingcute-volume-mute-fill size-5" title="静音" />
+        <i className="i-mingcute-volume-mute-fill size-5" title="Mute" />
       ) : (
-        <i className="i-mingcute-volume-fill size-5" title="取消静音" />
+        <i className="i-mingcute-volume-fill size-5" title="Unmute" />
       )}
     </ActionIcon>
   )

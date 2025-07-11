@@ -11,7 +11,7 @@ export const NoteWeatherAndMood = () => {
   return (
     <>
       <SidebarSection
-        label="天气"
+        label="Weather"
         className="flex items-center justify-between"
       >
         <Autocomplete
@@ -33,7 +33,7 @@ export const NoteWeatherAndMood = () => {
       </SidebarSection>
 
       <SidebarSection
-        label="心情"
+        label="Mood"
         className="flex items-center justify-between"
       >
         <Autocomplete

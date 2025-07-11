@@ -164,7 +164,7 @@ export const Comment: Component<{
                     </span>
                     {!!location && (
                       <span className="min-w-0 max-w-full truncate break-all text-[0.71rem] opacity-35">
-                        来自：{location}
+                        From: {location}
                       </span>
                     )}
                     {!!isWhispers && <OcticonGistSecret />}

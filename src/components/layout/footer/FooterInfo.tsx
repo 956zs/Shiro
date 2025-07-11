@@ -134,10 +134,10 @@ const PoweredBy: Component = ({ className }) => {
         >
           Shiro
         </StyledLink>{' '}
-        的开源版本。
+        open source version.
         {process.env.COMMIT_HASH && process.env.COMMIT_URL && (
           <MarkdownLink popper={false} href={process.env.COMMIT_URL}>
-            版本哈希：{process.env.COMMIT_HASH.slice(0, 8)}
+            Version hash: {process.env.COMMIT_HASH.slice(0, 8)}
           </MarkdownLink>
         )}
       </FloatPopover>
@@ -192,7 +192,7 @@ const FooterBottom = async () => {
           </a>
           <Divider />
           <a href="/sitemap.xml" target="_blank" rel="noreferrer">
-            站点地图
+            Sitemap
           </a>
           <Divider className="inline" />
 

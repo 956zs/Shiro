@@ -54,20 +54,20 @@ export const CommentAction = (props: { comment: CommentModel }) => {
             updateCommentState({ id, state: CommentState.Read })
           }}
         >
-          已读
+          Mark as Read
         </MotionButtonBase>
       )}
       <MotionButtonBase
         className="text-primary"
         onClick={() => {
           present({
-            title: `回复 ${author}`,
+            title: `Reply to ${author}`,
             content: () => <ReplyModal {...props} />,
             clickOutsideToDismiss: false,
           })
         }}
       >
-        回复
+        Reply
       </MotionButtonBase>
       {currentState === CommentState.Unread && (
         <MotionButtonBase
@@ -76,7 +76,7 @@ export const CommentAction = (props: { comment: CommentModel }) => {
             updateCommentState({ id, state: CommentState.Junk })
           }}
         >
-          标记垃圾
+          Mark as Spam
         </MotionButtonBase>
       )}
       {currentState !== CommentState.Unread && (

@@ -70,19 +70,19 @@ export const DataStat = () => {
     if (!stat) return []
     return [
       {
-        label: '博文',
+        label: 'Articles',
         value: stat.posts,
         icon: <CodeIcon />,
         actions: [
           {
-            name: '撰写',
+            name: 'Write',
             primary: true,
             onClick() {
               navigate('/dashboard/posts/edit')
             },
           },
           {
-            name: '管理',
+            name: 'Manage',
             onClick() {
               navigate('/dashboard/posts/list')
             },
@@ -91,19 +91,19 @@ export const DataStat = () => {
       },
 
       {
-        label: '手记',
+        label: 'Notes',
         value: stat.notes,
         icon: <i className="i-mingcute-quill-pen-line" />,
         actions: [
           {
-            name: '撰写',
+            name: 'Write',
             primary: true,
             onClick() {
               navigate('/dashboard/notes/edit')
             },
           },
           {
-            name: '管理',
+            name: 'Manage',
             onClick() {
               navigate('/dashboard/notes/list')
             },
@@ -112,13 +112,13 @@ export const DataStat = () => {
       },
 
       {
-        label: '页面',
+        label: 'Pages',
         value: stat.pages,
         icon: <i className="i-mingcute-file-line" />,
         actions: [
           {
             primary: true,
-            name: '管理',
+            name: 'Manage',
             onClick() {
               navigate('/dashboard/pages')
             },
@@ -127,13 +127,13 @@ export const DataStat = () => {
       },
 
       {
-        label: '分类',
+        label: 'Categories',
         value: stat.categories,
         icon: <i className="i-mingcute-pen-line" />,
         actions: [
           {
             primary: true,
-            name: '管理',
+            name: 'Manage',
             onClick() {
               navigate('/dashboard/posts/category')
             },
@@ -142,14 +142,14 @@ export const DataStat = () => {
       },
 
       {
-        label: '未读评论',
+        label: 'Unread Comments',
         value: stat.unreadComments,
         icon: <i className="i-mingcute-comment-line" />,
         highlight: stat.unreadComments > 0,
         actions: [
           {
             primary: true,
-            name: '管理',
+            name: 'Manage',
             onClick() {
               navigate('/dashboard/comments')
             },
@@ -158,25 +158,25 @@ export const DataStat = () => {
       },
 
       {
-        label: '缓存',
+        label: 'Cache',
         value: 'Redis',
         icon: <RedisIcon />,
         actions: [
           {
             primary: false,
-            name: '清除 API 缓存',
+            name: 'Clear API Cache',
             onClick() {
               apiClient.proxy.clean_catch.get().then(() => {
-                toast.success('清除成功')
+                toast.success('Cleared successfully')
               })
             },
           },
           {
             primary: false,
-            name: '清除数据缓存',
+            name: 'Clear Data Cache',
             onClick() {
               apiClient.proxy.clean_redis.get().then(() => {
-                toast.success('清除成功')
+                toast.success('Cleared successfully')
               })
             },
           },
@@ -184,45 +184,45 @@ export const DataStat = () => {
       },
 
       {
-        label: 'API 总调用次数',
+        label: 'Total API Calls',
         value: stat.callTime,
         icon: <TablerActivityHeartbeat />,
       },
       {
-        label: '今日 IP 访问次数',
+        label: "Today's IP Visits",
         value: stat.todayIpAccessCount,
         icon: <SolarPieChartBroken />,
       },
       {
-        label: '全站字符数',
+        label: 'Total Site Characters',
         value: siteWordCount,
         icon: <PhAlignLeft />,
       },
 
       {
-        label: '总阅读量',
+        label: 'Total Reads',
         value: readAndLikeCounts?.totalReads,
         icon: <NotebookMinimalistic />,
       },
       {
-        label: '总点赞数',
+        label: 'Total Likes',
         value: readAndLikeCounts?.totalLikes,
         icon: <IcBaselineFavoriteBorder />,
       },
 
       {
-        label: '当前在线访客',
+        label: 'Current Online Visitors',
         value: stat.online,
         icon: <IcSharpPeopleOutline />,
       },
       {
-        label: '今日访客',
+        label: "Today's Visitors",
         value: stat.todayOnlineTotal,
         icon: <FluentGuest28Filled />,
       },
       {
         value: stat.todayMaxOnline,
-        label: '今日最多同时在线人数',
+        label: 'Today Max Concurrent Online',
         icon: <MingcuteGame1Line />,
       },
     ]
@@ -237,9 +237,9 @@ export const DataStat = () => {
   return (
     <div className="relative @container">
       <h3 className="mb-4 text-xl font-light text-opacity-80">
-        数据看板：
+        Data Board:
         <small className="text-sm">
-          数据更新于： <RelativeTime date={new Date(dataUpdatedAt)} />
+          Data updated at: <RelativeTime date={new Date(dataUpdatedAt)} />
         </small>
       </h3>
       <div className="grid grid-cols-1 gap-6 @[550px]:grid-cols-2 @[900px]:grid-cols-3 @[1124px]:grid-cols-4 @[1200px]:grid-cols-5">

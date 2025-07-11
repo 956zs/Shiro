@@ -132,7 +132,7 @@ export const NoteHeaderMetaInfoSetting = () => {
 
     return {
       title: note?.title,
-      description: `手记${note.topic?.name ? ` / ${note.topic?.name}` : ''}`,
+      description: `Note${note.topic?.name ? ` / ${note.topic?.name}` : ''}`,
       slug: note?.nid.toString(),
     }
   })

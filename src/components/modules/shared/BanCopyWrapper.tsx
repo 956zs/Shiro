@@ -64,10 +64,13 @@ export const BanCopyWrapper: FC<PropsWithChildren> = (props) => {
                   }}
                 >
                   <div className="pointer-events-none mt-0 text-3xl font-medium text-red-400 dark:text-orange-500">
-                    注意：
+                    Notice:
                   </div>
                   <div className="pointer-events-none my-3 text-lg text-neutral-900 text-opacity-80 dark:text-zinc-100">
-                    <p>本文章为站长原创，保留版权所有，禁止复制。</p>
+                    <p>
+                      This article is original to the site owner. All rights
+                      reserved. Copying is prohibited.
+                    </p>
                   </div>
                 </m.div>
               </DialogContent>
