@@ -19,6 +19,7 @@ export enum DateFormat {
   'MM-DD ddd',
 
   'YYYY MMM DD dddd',
+  'YYYY 年 M 月 D 日 dddd',
 }
 
 export const parseDate = (
