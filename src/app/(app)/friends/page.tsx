@@ -291,12 +291,12 @@ const ApplyLinkInfo: FC = () => {
         <Markdown className="[&_p]:!my-1">
           {[
             '',
-            `**站点标题**: [${
+            `**Site Title**: [${
               seo.title
             }](${`${location.protocol}//${location.host}`})`,
-            `**站点描述**: ${seo.description}`,
-            `**主人头像**: [点击下载](${avatar})`,
-            `**主人名字**: ${name}`,
+            `**Site Description**: ${seo.description}`,
+            `**Owner Avatar**: [Click to download](${avatar})`,
+            `**Owner Name**: ${name}`,
           ].join('\n\n')}
         </Markdown>
       </div>
