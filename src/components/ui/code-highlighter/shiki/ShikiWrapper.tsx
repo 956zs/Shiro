@@ -211,7 +211,7 @@ export const ShikiHighLighterWrapper = forwardRef<
                 className="flex items-center justify-center text-xs"
               >
                 <i className="i-mingcute-arrow-to-down-line" />
-                <span className="ml-2">展开</span>
+                <span className="ml-2">Expand</span>
               </button>
             </div>
           )}

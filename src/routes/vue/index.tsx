@@ -27,7 +27,7 @@ export const Component = () => {
 }
 
 export const config = defineRouteConfig({
-  title: '完整功能与其他设置',
+  title: 'Full Features and Other Settings',
   icon: <i className="i-mingcute-settings-1-line" />,
   priority: 10e2,
 })

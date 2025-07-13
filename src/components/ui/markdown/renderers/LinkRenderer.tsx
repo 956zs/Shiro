@@ -188,7 +188,7 @@ export const BlockLinkRenderer = ({
               <ClientOnly
                 fallback={
                   <BlockLoading className="absolute inset-0 size-full rounded-md">
-                    哔哩哔哩视频加载中...
+                    Loading Bilibili video...
                   </BlockLoading>
                 }
               >

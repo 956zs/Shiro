@@ -552,10 +552,10 @@ const fetchBangumiData: FetchObject = {
       const { infobox } = json
       infobox.forEach(
         (item: { key: string; value: string | { v: string }[] }) => {
-          if (item.key === '简体中文名') {
+          if (item.key === 'Simplified Chinese Name') {
             title =
               typeof item.value === 'string' ? item.value : item.value[0].v
-          } else if (item.key === '别名') {
+          } else if (item.key === 'Alias') {
             const aliases: { v: string }[] = item.value as { v: string }[]
             aliases.forEach((alias: { v: string }) => {
               originalTitle += `${alias.v} / `
@@ -764,13 +764,13 @@ const fetchQQMusicSongData: FetchObject = {
         desc: (
           <>
             <span className="block">
-              <span className="font-bold">歌手：</span>
+              <span className="font-bold">Artist:</span>
               <span>
                 {songInfo.singer.map((person: any) => person.name).join(' / ')}
               </span>
             </span>
             <span className="block">
-              <span className="font-bold">专辑：</span>
+              <span className="font-bold">Album:</span>
               <span>{songInfo.album.name}</span>
             </span>
           </>
@@ -820,13 +820,13 @@ const fetchNeteaseMusicSongData: FetchObject = {
         desc: (
           <>
             <span className="block">
-              <span className="font-bold">歌手：</span>
+              <span className="font-bold">Artist:</span>
               <span>
                 {singerInfo.map((person: any) => person.name).join(' / ')}
               </span>
             </span>
             <span className="block">
-              <span className="font-bold">专辑：</span>
+              <span className="font-bold">Album:</span>
               <span>{albumInfo.name}</span>
             </span>
           </>

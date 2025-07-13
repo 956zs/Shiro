@@ -125,7 +125,7 @@ const FontItem: Component<{
 }
 
 export const SansFont = () => {
-  return <span className="font-sans text-[30px]">字</span>
+  return <span className="font-sans text-[30px]">Font</span>
 }
 
 export const YouZaiFontSvg = () => {

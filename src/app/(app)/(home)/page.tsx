@@ -217,7 +217,7 @@ const ActivityScreen = () => {
 
 const windsock = [
   {
-    title: 'Articles',
+    title: 'Posts',
     path: '/posts',
     type: 'Post',
     subMenu: [],
@@ -230,7 +230,7 @@ const windsock = [
     icon: FaSolidFeatherAlt,
   },
   {
-    title: 'Moments in Time',
+    title: 'Timeline',
     icon: FaSolidHistory,
     path: '/timeline',
   },
@@ -240,17 +240,17 @@ const windsock = [
     path: '/friends',
   },
   {
-    title: 'Write a Thought',
+    title: 'Thoughts',
     icon: MdiLightbulbOn20,
     path: '/thinking',
   },
   {
-    title: 'See My Projects',
+    title: 'Projects',
     icon: MdiFlask,
     path: '/projects',
   },
   {
-    title: 'Quotes',
+    title: 'Sayings',
     path: '/says',
     icon: FaSolidComments,
   },
@@ -275,8 +275,8 @@ const Windsock = () => {
   return (
     <>
       <div className="center mt-28 flex flex-col">
-        <div className="my-5 text-2xl font-medium">Windsock</div>
-        <div className="mb-24 opacity-90">Why not take a look around?</div>
+        <div className="my-5 text-2xl font-medium">Explore</div>
+        <div className="mb-24 opacity-90">Discover more</div>
         <ul className="flex flex-col flex-wrap gap-2 gap-y-8 opacity-80 lg:flex-row">
           {windsock.map((item, index) => {
             return (

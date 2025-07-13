@@ -11,11 +11,12 @@ export const EllipsisTextWithTooltipDemo: DocumentComponent = () => {
 }
 
 EllipsisTextWithTooltipDemo.meta = {
-  title: '文本溢出省略 + 提示',
-  description: '如果文本溢出则省略，省略时伴随 Tooltip 提示',
+  title: 'Ellipsis Text with Tooltip',
+  description:
+    'If the text overflows, it will be omitted, and a Tooltip will be displayed when omitted',
 }
 
 export const metadata: DocumentPageMeta = {
-  title: '文本溢出',
-  description: '一个简单的处理文本溢出省略的组件',
+  title: 'Text Overflow',
+  description: 'A simple component to handle text overflow ellipsis',
 }

@@ -37,7 +37,7 @@ const useNewCommentObserver = (refId: string) => {
         data.ref === refId && // 如果标签页在后台
         document.visibilityState === 'hidden'
       ) {
-        document.title = `新评论！${currentTitle}`
+        document.title = `New Comment! ${currentTitle}`
       }
     })
     return () => {

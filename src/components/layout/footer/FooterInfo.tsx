@@ -126,7 +126,7 @@ const PoweredBy: Component = ({ className }) => {
           </StyledLink>
         }
       >
-        这是{' '}
+        This is the{' '}
         <StyledLink
           className="underline"
           href="https://github.com/innei/Shiro"
@@ -225,7 +225,7 @@ const FooterBottom = async () => {
           <>
             <Divider />
             <span>
-              最近访客来自&nbsp;
+              Last visitor from&nbsp;
               {lastVisitor.flag}&nbsp;
               {[lastVisitor.city, lastVisitor.country]
                 .filter(Boolean)

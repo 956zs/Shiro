@@ -8,6 +8,6 @@ export const CustomCreatedInput = () => (
 export const PublicAtInput = () => (
   <SidebarDateInputField
     getSet={useNoteModelSingleFieldAtom('created')}
-    label="发布于"
+    label="Published at"
   />
 )

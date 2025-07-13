@@ -34,7 +34,7 @@ export const MFootNote: FC<PropsWithChildren> = (props) => (
               >
                 <KeyboardReturnRounded />
                 <span className="sr-only">
-                  返回
+                  Return
                   {id}
                 </span>
               </a>

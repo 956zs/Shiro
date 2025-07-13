@@ -145,7 +145,7 @@ const ActivityIcon = memo(() => {
             type="tooltip"
             strategy="fixed"
           >
-            {ownerName} 正在听 {media.title} - {media.artist}
+            {ownerName} is listening to {media.title} - {media.artist}
           </FloatPopover>
         </m.div>
       )}
@@ -181,7 +181,7 @@ const ActivityIcon = memo(() => {
                   trackerMessage="Activity"
                 >
                   <span className="whitespace-pre-line">
-                    {ownerName} 正在使用 {processName}
+                    {ownerName} is using {processName}
                     {renderDescription ? ` ${renderDescription}` : ''}
                   </span>
                 </ImpressionView>

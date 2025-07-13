@@ -33,7 +33,7 @@ export const headerMenuConfig: IHeaderMenu[] = [
     subMenu: [],
   },
   {
-    title: 'Articles',
+    title: 'Posts',
     path: '/posts',
     type: 'Post',
     subMenu: [],
@@ -58,7 +58,7 @@ export const headerMenuConfig: IHeaderMenu[] = [
         path: '/timeline?type=note',
       },
       {
-        title: 'Articles',
+        title: 'Posts',
         icon: h(IonBook),
         path: '/timeline?type=post',
       },
@@ -98,7 +98,7 @@ export const headerMenuConfig: IHeaderMenu[] = [
         path: '/projects',
       },
       {
-        title: 'Quotes',
+        title: 'Sayings',
         path: '/says',
         icon: h(FaSolidComments),
       },

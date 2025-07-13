@@ -12,10 +12,10 @@ export const Hitokoto = () => {
     queryKey: ['hitokoto'],
     queryFn: () =>
       fetchHitokoto([
-        SentenceType.动画,
-        SentenceType.原创,
-        SentenceType.哲学,
-        SentenceType.文学,
+        SentenceType.Animation,
+        SentenceType.Original,
+        SentenceType.Philosophy,
+        SentenceType.Literature,
       ]),
     refetchInterval: 1000 * 60 * 60 * 24,
     staleTime: Infinity,
@@ -58,21 +58,21 @@ export const Hitokoto = () => {
 }
 
 enum SentenceType {
-  '动画' = 'a',
-  '漫画' = 'b',
-  '游戏' = 'c',
-  '文学' = 'd',
-  '原创' = 'e',
-  '来自网络' = 'f',
-  '其他' = 'g',
-  '影视' = 'h',
-  '诗词' = 'i',
-  '网易云' = 'j',
-  '哲学' = 'k',
-  '抖机灵' = 'l',
+  'Animation' = 'a',
+  'Comic' = 'b',
+  'Game' = 'c',
+  'Literature' = 'd',
+  'Original' = 'e',
+  'From the Internet' = 'f',
+  'Other' = 'g',
+  'Film/TV' = 'h',
+  'Poetry' = 'i',
+  'NetEase Cloud' = 'j',
+  'Philosophy' = 'k',
+  'Witty' = 'l',
 }
 const fetchHitokoto = async (
-  type: SentenceType[] | SentenceType = SentenceType.文学,
+  type: SentenceType[] | SentenceType = SentenceType.Literature,
 ) => {
   const json = await fetch(
     `https://v1.hitokoto.cn/${

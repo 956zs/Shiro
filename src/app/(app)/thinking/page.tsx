@@ -106,7 +106,7 @@ const PostBox = () => {
             className="duration-200 disabled:cursor-not-allowed disabled:opacity-10"
           >
             <TiltedSendIcon className="size-5 text-zinc-800 dark:text-zinc-200" />
-            <span className="sr-only">发送</span>
+            <span className="sr-only">Send</span>
           </MotionButtonBase>
         </div>
       </TextArea>
@@ -257,14 +257,14 @@ const List = () => {
                   <button
                     onClick={() => {
                       present({
-                        title: '评论',
+                        title: 'Comment',
                         content: () => <CommentModal {...item} />,
                       })
                     }}
                   >
                     <i className="i-mingcute-comment-line" />
 
-                    <span className="sr-only">评论</span>
+                    <span className="sr-only">Comment</span>
                     <span>
                       {/* @ts-expect-error */}
                       {item.comments}
@@ -277,7 +277,7 @@ const List = () => {
                     }}
                   >
                     <i className="i-mingcute-heart-line" />
-                    <span className="sr-only">喜欢</span>
+                    <span className="sr-only">Like</span>
                     <span>{item.up}</span>
                   </button>
 
@@ -287,7 +287,7 @@ const List = () => {
                     }}
                   >
                     <i className="i-mingcute-heart-crack-line" />
-                    <span className="sr-only">不喜欢</span>
+                    <span className="sr-only">Dislike</span>
                     <span>{item.down}</span>
                   </button>
 
@@ -319,7 +319,7 @@ const DeleteButton = (props: { id: string }) => {
       .proxy(props.id)
       .delete()
       .then(() => {
-        toast.success('删除成功')
+        toast.success('Deleted successfully')
 
         queryClient.setQueryData<InfiniteData<RecentlyModel[]>>(
           QUERY_KEY,
@@ -345,7 +345,7 @@ const DeleteButton = (props: { id: string }) => {
       className="text-red-500 hover:text-red-600 dark:hover:text-red-300"
       onClick={() => {
         present({
-          title: '确定删除',
+          title: 'Confirm Deletion',
           content: ({ dismiss }) => (
             <div className="w-[300px] space-y-4">
               <div className="mt-4 flex justify-end space-x-4">
@@ -357,10 +357,10 @@ const DeleteButton = (props: { id: string }) => {
                   }}
                   className="bg-zinc-100/80 !text-red-500 dark:bg-neutral-900/90"
                 >
-                  确定
+                  Confirm
                 </StyledButton>
                 <StyledButton variant="primary" onClick={dismiss}>
-                  取消
+                  Cancel
                 </StyledButton>
               </div>
             </div>
@@ -369,7 +369,7 @@ const DeleteButton = (props: { id: string }) => {
       }}
     >
       <i className="i-mingcute-delete-line" />
-      <span className="sr-only">删除</span>
+      <span className="sr-only">Delete</span>
     </button>
   )
 }
@@ -379,7 +379,7 @@ const CommentModal = (props: RecentlyModel) => {
 
   return (
     <div className="max-w-[95vw] overflow-y-auto overflow-x-hidden md:w-[500px] lg:w-[600px] xl:w-[700px]">
-      <span>{allowComment && '回复：'}</span>
+      <span>{allowComment && 'Reply:'}</span>
 
       <Markdown className="mt-4" allowsScript>
         {content}
@@ -407,7 +407,7 @@ const RefPreview: FC<{ refModel: any }> = (props) => {
     <>
       <Divider className="my-4 w-12 bg-current opacity-50" />
       <p className="flex items-center space-x-2 opacity-80">
-        发表于： <i className="i-mingcute-link-3-line" />
+        Posted on: <i className="i-mingcute-link-3-line" />
         <PeekLink href={url} className="shiro-link--underline">
           {title}
         </PeekLink>

@@ -16,7 +16,7 @@ export const SpoilerRule: MarkdownToJSX.Rule<{
   parse: parseCaptureInline,
   render(node, output, state?) {
     return (
-      <del key={state?.key} className="spoiler" title="你知道的太多了">
+      <del key={state?.key} className="spoiler" title="You know too much">
         {output(node.children, state!)}
       </del>
     )
